@@ -1,8 +1,12 @@
 
-
-<head>
-    <title>git</title>
-</head>
+{% highlight html linenos %}
+   <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>git</title>
+        </head>
+    </html>
+{% endhighlight %}
 
 
 # git
