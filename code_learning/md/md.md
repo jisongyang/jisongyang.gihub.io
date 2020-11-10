@@ -1,6 +1,21 @@
 # markdown
 
 [Toc]
+
+#### 问题
+
+* github网页渲染表格，需要在表格前面空一行，否则不一定会渲染成功
+
+* github会自动渲染md文件，只需要访问的时候去掉.md的后缀
+    > 比如需要渲染 python/selenium.md，则访问 python/selenium 即可
+
+
+---
+
+
+
+
+
 #### 学习内容
 
 <!-- 我展示的是一级标题
@@ -137,18 +152,3 @@ $(document).ready(function () {
 使用 <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Del</kbd> 重启电脑
 **文本加粗** 
 \*\* 正常显示星号 \*\*
-
-$$
-\mathbf{V}_1 \times \mathbf{V}_2 =  \begin{vmatrix} 
-\mathbf{i} & \mathbf{j} & \mathbf{k} \\
-\frac{\partial X}{\partial u} &  \frac{\partial Y}{\partial u} & 0 \\
-\frac{\partial X}{\partial v} &  \frac{\partial Y}{\partial v} & 0 \\
-\end{vmatrix}
-<!-- ${$tep1}{\style{visibility:hidden}{(x+1)(x+1)}} -->
-$$
-
-
-
-#### 问题
-
-* github网页渲染表格，需要在表格前面空一行，否则不一定会渲染成功

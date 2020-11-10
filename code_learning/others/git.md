@@ -1,14 +1,3 @@
-
-
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>git</title>
-    </head>
-</html>
-
-
-
 # git
 
 #### git command
