@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 ">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>selenium</title>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        /* body{
+            /* background: #66CCCC; */
+            /* padding: 40px 0;
+            text-align: center;
+        } */ */
+        .ribbon{
+            display: inline-block;
+        }
+        .ribbon::before{
+            margin-top: 8px;
+            content: "";
+            border: 24px solid #333;
+            border-left-color: transparent;
+            float: left;
+        }
+        .ribbon::after{
+            margin-top: 8px;
+            content: "";
+            border: 24px solid #333;
+            border-right-color: transparent;
+            float: left;
+        }
+        a{
+            float: left;
+            height: 56px;
+            text-decoration: none;
+            overflow: hidden;
+        }
+        span{
+            margin-top: 8px;
+            color: #fff;
+            line-height:48px;
+            padding: 0 16px;
+            background: #333;
+            display: inline-block;
+            position: relative;
+            transition: all 0.3s;
+        }
+        a:hover span{
+            margin-top: 0;
+            background: #666699;
+        }
+        span::before{
+            content: "";
+            position: absolute;
+            top: 48px;
+            left: 0;
+            border-right: 8px solid #666699;
+            border-bottom: 8px solid #333;
+        }
+        span::after{
+            content: "";
+            position: absolute;
+            top:48px;
+            right: 0;
+            border-left: 8px solid #666699;
+            border-bottom: 8px solid #333;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="ribbon">
+        <a href="#"><span>Learn</span></a>
+        <a href="#"><span>Selenium</span></a>
+        <a href="#"><span>Matplot</span></a>
+    </div> -->
+	<!-- <div style="clear:both;"></div> -->
+	
+
+	<div id="content"></div>
+	<script>
+		  $.get('selenium.md', function(response, status, xhr){
+			  $("#content").html(marked(response));
+		  });
+	</script>
+
+
+
+
+</body>
+</html>

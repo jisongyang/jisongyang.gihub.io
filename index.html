@@ -5,8 +5,17 @@
 <!-- 	<meta http-equiv="Content-Type" content=text/html;charset="utf-8"> -->
 	<!-- <meta http-equiv="Refresh" content="3;url=note_jump/jump.html"> -->
 	<title>just for fun</title>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     </head>
     <body>
 	  <a href="note_jump/jump.html">code_learing</a>
+	  <div id="content"></div>
+	  <script>
+			$.get('code_learning/md/md.md', function(response, status, xhr){
+				$("#content").html(marked(response));
+			});
+	  </script>
+
     </body>
 </html>
