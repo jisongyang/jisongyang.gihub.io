@@ -15,14 +15,14 @@
         display: inline-block;
     }
     .ribbon::before{
-        margin-top: 8px;
+        margin-top: 48px;
         content: "";
         border: 24px solid #333;
         border-left-color: transparent;
         float: left;
     }
     .ribbon::after{
-        margin-top: 8px;
+        margin-top: 48px;
         content: "";
         border: 24px solid #333;
         border-right-color: transparent;
@@ -30,12 +30,12 @@
     }
     a{
         float: left;
-        height: 56px;
+        height: 96px;
         text-decoration: none;
         overflow: hidden;
     }
     spann{
-        margin-top: 8px;
+        margin-top: 48px;
         color: #fff;
         line-height:48px;
         padding: 0 16px;
@@ -45,7 +45,7 @@
         transition: all 0.3s;
     }
     a:hover spann{
-        margin-top: 0;
+        margin-top: 40px;
         background: #666699;
     }
     spann::before{
