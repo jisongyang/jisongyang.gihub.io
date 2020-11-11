@@ -4,4 +4,4 @@
 #### learning note  
 [learn](learn)  
 #### error note  
-[selenium](selenium.html)  
+[selenium](selenium)  
