@@ -4,14 +4,21 @@
         <base target="_parent">
     </head>
     <body>
-        <div class="ribbon">
-            <a href="learn"><spann>Learn</spann></a>
-            <a href="selenium"><spann>Selenium</spann></a>
-            <a href="matplot"><spann>Matplot</spann></a>
+        <div class="box">
+            <div class="iter">
+                <a href="../../note_jump/jump.html"><iterm>Python</iterm></div></a>
+            </div>
+            <div class="ribbon">
+                <a href="learn"><spann>Learn</spann></a>
+                <a href="selenium"><spann>Selenium</spann></a>
+                <a href="matplot"><spann>Matplot</spann></a>
+            </div>
         </div>
 
     </body>
 </html>
+
+
 
 <style>
     *{
@@ -19,21 +26,37 @@
         padding: 0;
     }
     body{text-align:center}
-    .div{margin:0 auto}
+    /* .div{margin:0 auto} */
+
+    .box{
+        display: inline-block;
+        text-align: center;
+        margin:0 auto
+    }
     .ribbon{
         display: inline-block;
+        margin-left: -40px;
     }
     .ribbon::before{
         margin-top: 48px;
         content: "";
-        border: 24px solid #333;
+        border: 24px solid #495057;
         border-left-color: transparent;
         float: left;
-    }
+    } 
     .ribbon::after{
         margin-top: 48px;
         content: "";
+        border: 24px solid #495057;
+        border-right-color: transparent;
+        float: left;
+    }
+    .iter::after{
+        margin-top: 48px;
+        content: "";
         border: 24px solid #333;
+        border-top-color: transparent;
+        border-bottom-color: transparent;
         border-right-color: transparent;
         float: left;
     }
@@ -44,6 +67,16 @@
         overflow: hidden;
     }
     spann{
+        margin-top: 48px;
+        color: #fff;
+        line-height:48px;
+        padding: 0 16px;
+        background: #495057;
+        display: inline-block;
+        position: relative;
+        transition: all 0.3s;
+    }
+    iterm{
         margin-top: 48px;
         color: #fff;
         line-height:48px;
