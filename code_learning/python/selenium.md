@@ -4,9 +4,17 @@
     <a href="#"><spann>Matplot</spann></a>
 </div>
 
-<div id="page1">
+<div id="page1" class='headbar'>
     <iframe align="center" width="100%" height="170" src="show.html"  frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
 </div>
+<style>
+    /* .headbar{
+        display: inline-block;
+    } */
+    .headbar{
+　　text-align:center;
+    }
+</style>
 
 <object style="border:1px solid red" type="text/x-scriptlet" data="show.html" width="100%" height="200px"></object>
 
