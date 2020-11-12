@@ -9,6 +9,18 @@
         margin:0 auto;
     }
 </style>
+
+
+
+<!-- <script language="javascript">
+ 
+window.parent.frames.location.href="../welcome.html"
+ 
+</script> -->
+
+
+
+
 <!-- ___________________________________________ -->
 <!-- ___________________________________________ -->
 
