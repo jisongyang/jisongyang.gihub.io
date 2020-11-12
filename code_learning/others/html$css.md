@@ -8,6 +8,9 @@
 <!-- ___________________________________________ -->
 <!-- ___________________________________________ -->
 
+
+[Toc]
+
 # html
 
 * 在md中引入另一个文件中的一堆html代码（为了美观）
@@ -35,4 +38,16 @@
         <head>
             <base target="_parent">
         </head>
+    ```
+
+# css
+
+* 三角形的构造
+    ```css
+        /* 将正方形沿着两条对角线分为四个三角形 */
+        border: 24px solid #333;
+        /* 隐藏三个方向上的三角形，则剩下某一个三角形 */
+        border-top-color: transparent;
+        border-bottom-color: transparent;
+        border-right-color: transparent;
     ```
