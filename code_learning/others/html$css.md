@@ -26,8 +26,13 @@
 
 * \<iframe>中的链接全局跳转，整个界面跳转
     ```html
-        <!-- 在<iframe>导入的html（比如上述的others_show.html）中的<head>添加 -->
+        <!-- 在<iframe>导入的html（比如上述的others_show.html）中的<head>添加target参数 -->
+        <!-- 在新的标签页跳转 -->
         <head>
             <base target="_blank">
+        </head>
+        <!-- 在当前标签页跳转 -->
+        <head>
+            <base target="_parent">
         </head>
     ```
