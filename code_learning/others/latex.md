@@ -3,7 +3,7 @@
 </div>
 <style>
     .headbar{
-        text-align:center;
+        /* text-align:center; */
         width:100%;
         left: 50;
         position: fixed; /*固定在顶部*/
