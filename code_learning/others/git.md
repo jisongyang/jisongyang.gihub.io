@@ -47,3 +47,14 @@
 
 
 #### git error
+
+* git 忽略提交文件
+    ```git
+        touch .gitignore    创建gitignore文件
+         
+        在gitignore文件添加指定的忽略文件（可以使用vim编辑）
+        target              忽略这个target目录
+        angular.json        忽略这个angular.json文件
+        log/*               忽略log下的所有文件
+        css/*.css           忽略css目录下的.css文件
+    ```
