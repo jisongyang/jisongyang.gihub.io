@@ -11,7 +11,8 @@
         background:rgb(255,255,255);
         }
     .iframe{
-        margin:0 auto;
+        /* margin:0 auto; */
+        margin-left:50;
     }
 </style>
 
