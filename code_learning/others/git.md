@@ -44,10 +44,6 @@
     git remote rename a b   将别名a改为b
     ```
 
-
-
-#### git error
-
 * git 忽略提交文件
     ```git
         touch .gitignore    创建gitignore文件
@@ -58,3 +54,6 @@
         log/*               忽略log下的所有文件
         css/*.css           忽略css目录下的.css文件
     ```
+
+#### git error
+
