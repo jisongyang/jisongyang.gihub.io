@@ -14,30 +14,46 @@
 
 * git提交文件的三条命令合并成脚本 ``gitcommit.sh``
 
-```shell
-    #!/bin/bash
-    # 使用 ./gitcommit [commit message] [branch name] 调用
-    git status
-    
-    read -r -p "是否继续提交? [Y/n] " input
-    
-    case $input in
-        [yY][eE][sS]|[yY])
-            echo "继续提交"
-            git add -A
-            git commit -m $1
-            git push origin $2
-                        exit 1
-            ;;
-
-        [nN][oO]|[nN])
-            echo "中断提交"
-            exit 1
+    ```shell
+        #!/bin/bash
+        # 使用 ./gitcommit [commit message] [branch name] 调用
+        git status
+        
+        read -r -p "是否继续提交? [Y/n] " input
+        
+        case $input in
+            [yY][eE][sS]|[yY])
+                echo "继续提交"
+                git add -A
+                git commit -m $1
+                git push origin $2
+                            exit 1
                 ;;
 
-        *)
-        echo "输入错误，请重新输入"
-        ;;
-    esac
+            [nN][oO]|[nN])
+                echo "中断提交"
+                exit 1
+                    ;;
 
-```
+            *)
+            echo "输入错误，请重新输入"
+            ;;
+        esac
+
+    ```
+
+# bash
+ * 删除每一行末尾的换行符
+    ```bash
+        %%
+        @echo off
+        set "blank= "
+        for /f "delims=" %%a in ('dir/b/a-d pre.txt')do (
+        cls&echo/&echo 正在处理 %%a
+        for /f "delims=" %%b in ('type "%%a"')do set/p=%%b%blank%<nul>>"n%%a"
+        echo.>>"n%%a"
+        move/y "n%%a" "%%a")
+        cls&echo/&echo 处理完毕
+        type pre.txt|clip
+        notepad pre.txt
+    ```
