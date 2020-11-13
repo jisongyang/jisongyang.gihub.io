@@ -4,18 +4,19 @@
         <base target="_parent">
     </head>
     <body>
-        <div class="box">
-            <div class="iter">
-                <a href="../../note_jump/jump.html"><iterm>Others</iterm></div></a>
-            </div>
-            <div class="ribbon">
-                <a href="git"><spann>Git</spann></a>
-                <a href="wireshark"><spann>Wireshark</spann></a>
-                <a href="html$css"><spann>Html&CSS</spann></a>
-                <a href="latex"><spann>Latex</spann></a>
+        <div class="top">
+            <div class="box">
+                <div class="iter">
+                    <a href="../../note_jump/jump.html"><iterm>Others</iterm></div></a>
+                </div>
+                <div class="ribbon">
+                    <a href="git"><spann>Git</spann></a>
+                    <a href="wireshark"><spann>Wireshark</spann></a>
+                    <a href="html$css"><spann>Html&CSS</spann></a>
+                    <a href="latex"><spann>Latex</spann></a>
+                </div>
             </div>
         </div>
-
     </body>
 </html>
 
@@ -26,13 +27,20 @@
     }
     body{text-align:center}
     /* .div{margin:0 auto} */
-
+    .top{
+        height: auto; /*高度改为自动高度*/
+        width:100%;
+        margin-left: 0;
+        /* background:rgb(189, 181, 181); */
+        position: fixed; /*固定在顶部*/
+        top: 0;/*离顶部的距离为0*/
+        margin-bottom: 5px;
+    }
     .box{
         display: inline-block;
         text-align: center;
         margin:0 auto;
-        position: fixed; /*固定在顶部*/
-        top: 10;/*离顶部的距离为0*/
+  
     }
     .ribbon{
         display: inline-block;
