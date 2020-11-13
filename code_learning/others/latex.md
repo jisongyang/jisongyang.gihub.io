@@ -5,14 +5,14 @@
     .headbar{
         /* text-align:center; */
         width:100%;
-        left: 50;
+        /* left: 50; */
         position: fixed; /*固定在顶部*/
         top: 50;/*离顶部的距离为0*/
         background:rgb(255,255,255);
         }
     .iframe{
         /* margin:0 auto; */
-        margin-left:50;
+        margin-left:200;
     }
 </style>
 
