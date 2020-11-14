@@ -6,6 +6,14 @@
     .iframe{margin:0 auto;}
 </style>
 
+<script>
+    var oDiv = document.getElementById('head');
+    oDiv.style.position = 'fixed';
+    oDiv.style.top = '0px';
+    oDiv.style.left = '0px';
+</script>
+
+
 <!-- ___________________________________________ -->
 <!-- ___________________________________________ -->
 

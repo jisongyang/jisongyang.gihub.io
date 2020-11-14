@@ -42,10 +42,10 @@
 
     ```
 
-# bash
+# bat
  * 删除每一行末尾的换行符
     ```bash
-        %%
+        %创建pre.txt,将需要删除换行符的文本复制到pre.txt中保存，然后运行此.bat%
         @echo off
         set "blank= "
         for /f "delims=" %%a in ('dir/b/a-d pre.txt')do (
@@ -56,4 +56,10 @@
         cls&echo/&echo 处理完毕
         type pre.txt|clip
         notepad pre.txt
+    ```
+
+ * 获取当前文件下所有文件名
+    ```bash
+        @echo off
+        for /f "delims=" %%a in ('dir /b/a-d/oN *.*') do echo %%~na >>name_list.txt
     ```
