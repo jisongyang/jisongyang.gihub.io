@@ -9,15 +9,9 @@
     var oDiv = document.getElementById('head');
     oDiv.style.position = 'fixed'; oDiv.style.top = '0px'; oDiv.style.left = '0px';
 </script>
-
+<br><br>
 <!-- ___________________________________________ -->
 <!-- ___________________________________________ -->
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
 
 [Toc]
 
