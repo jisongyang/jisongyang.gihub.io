@@ -1,5 +1,5 @@
 <div id="navifation" class='headbar'>
-    <iframe id='head' align="center" width="100%" height="120" src="others_show.html"  frameborder="no" border="0" marginwidth="0" marginheight="20px" scrolling="no"></iframe>
+    <iframe id='head' align="center" width="100%" height="80" src="others_show.html"  frameborder="no" border="0" marginwidth="0" marginheight="px" scrolling="no" margin='20px'></iframe>
 </div>
 <style>
     .headbar{text-align:center}
