@@ -16,7 +16,7 @@
 # js
 
 * 固定div在页面顶端
-    ```js
+    ``` javascript
         <script>
             var oDiv=document.getElementById('head');
             oDiv.style.position='fixed'; oDiv.style.top='0px'; oDiv.style.left='0px';
@@ -24,7 +24,7 @@
     ```
 
 * 设置html访问密码
-    ```js
+    ``` javascript
         <script>
             var password="";
             password=prompt('请输入密码 (本网站需输入密码才可进入):','');
