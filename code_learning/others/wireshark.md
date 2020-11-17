@@ -20,5 +20,10 @@
 
 * tshark提取endpoints的数据，其中“-n”是将MAC地址转为16进制
     ```
-    D:\\software\\wireshark\\tshark -r {} -i enp0s31f6 -qz endpoints,eth -n >{}\\{}.txt
+        tshark -r {} -i enp0s31f6 -qz endpoints,eth -n >{}\\{}.txt
+    ```
+
+* tshark提取字段数据,-Y是过滤条件，-e指定字段
+    ```
+        tshark -r {} -Y "ssl" -T fields -e tcp.stream -e ber.64bit_uint_as_bytes -e _ws.col.Info -e ssl.record.length
     ```

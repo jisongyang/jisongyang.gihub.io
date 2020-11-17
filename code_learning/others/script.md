@@ -67,3 +67,21 @@
         @echo off
         for /f "delims=" %%a in ('dir /b/a-d/oN *.*') do echo %%~na >>name_list.txt
     ```
+
+ * 循环处理多个文件
+    ```bash
+        @echo off
+        for /f "delims=" %%A in ('dir original_data\*.* /b') do (
+
+        md deal_data\%%A
+        dir original_data\%%A\*.* /b >deal_data\%%A\name.txt 
+        echo "creat %%A done!"
+        for /f "delims=" %%i in (deal_data\%%A\name.txt) do (
+        echo %%A>deal_data\%%A\%%i_pre_data.txt
+        D:\software\Wireshark\tshark -r original_data\%%A\%%i -Y "ssl" -T fields -e tcp.stream -e ber.64bit_uint_as_bytes -e _ws.col.Info -e ssl.record.length>>deal_data\%%A\%%i_pre_data.txt
+        echo "capture %%i done!"
+        python -c "import reorder_test; reorder_test.txt_to_xlsx('deal_data\%%A\%%i_pre_data.txt')"
+        echo "%%i to excle done!"
+        )
+    ```
+
