@@ -49,9 +49,22 @@
 * 三角形的构造
     ```css
         /* 将正方形沿着两条对角线分为四个三角形 */
-        border: 24px solid #333;
         /* 隐藏三个方向上的三角形，则剩下某一个三角形 */
+        border: 24px solid #333;
         border-top-color: transparent;
         border-bottom-color: transparent;
         border-right-color: transparent;
+
+        /* 左上角三角形*/
+        width: 0;
+        height: 0;
+        border-top: 100px solid red;
+        border-right: 100px solid transparent;
+
+        /*向上上三角形*/
+        width: 0;
+        height: 0;
+        border-left: 50px solid transparent;
+        border-right: 50px solid transparent;
+        border-bottom: 100px solid red;
     ```
