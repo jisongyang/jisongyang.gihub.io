@@ -31,6 +31,9 @@
     >Yadav, P., Feraudo, A., Arief, B., Shahandashti, S. F., & Vassilakis, V. G. (2020). Position paper: A systematic framework for categorising IoT device fingerprinting mechanisms. In Proceedings of ACM Conference (Conference’17) (Vol. 1, Issue 1). Association for Computing Machinery. http://arxiv.org/abs/2010.08466
     >- <a href="https://gitmind.cn/app/doc/3cb997418" target="_blank">思维导图</a> // <a href="https://pan.cstcloud.cn/s/gL79FDDQbg" target="_blank">pdf文件</a>
 
+* 入侵检测系统调查：技术，数据集和挑战
+    >Khraisat, A., Gondal, I., Vamplew, P., & Kamruzzaman, J. (2019). Survey of intrusion detection systems: techniques, datasets and challenges. Cybersecurity, 2(1). https://doi.org/10.1186/s42400-019-0038-7
+    >- <a href="https://gitmind.cn/app/doc/c76998332" target="_blank">思维导图</a> // <a href="https://pan.cstcloud.cn/s/vmzVcjzETEY" target="_blank">pdf文件</a>
 
 #### 设备识别
 
