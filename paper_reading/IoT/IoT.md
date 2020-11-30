@@ -35,6 +35,10 @@
 
 #### 设备识别
 
+* IoTFinder：通过被动DNS流量分析对物联网设备进行大规模高效识别
+    >Perdisci, R., Papastergiou, T., Alrawi, O., & Antonakakis, M. (2020). IoTFinder : Efficient Large-Scale Identification of IoT Devices via Passive DNS Traffic Analysis. IEEE European Symposium on Security and Privacy, 474–489.
+    >- <a href="https://gitmind.cn/app/doc/9f1997330" target="_blank">思维导图</a> // <a href="https://pan.cstcloud.cn/s/ogrOpqcLT2o" target="_blank">pdf文件</a>
+
 #### 异常检测
 
 * IoT-KEEPER：使用边缘的在线流量分析检测恶意物联网网络活动
