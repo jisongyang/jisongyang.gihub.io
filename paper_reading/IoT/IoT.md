@@ -21,9 +21,14 @@
 * 设备行为指纹调查：数据源，技术，应用场景和数据集
 
     >Sánchez, P. M. S., Valero, J. M. J., Celdrán, A. H., Bovet, G., Pérez, M. G., & Pérez, G. M. (2020). A Survey on Device Behavior Fingerprinting: Data Sources, Techniques, Application Scenarios, and Datasets. 1–30. http://arxiv.org/abs/2008.03343
-    >- <a href="https://gitmind.cn/app/doc/a52975571" target="_blank">思维导图</a>
-    >- <a href="https://pan.cstcloud.cn/s/NrVkpdtLQTM" target="_blank">pdf文件</a>
+    >- <a href="https://gitmind.cn/app/doc/a52975571" target="_blank">思维导图</a> // <a href="https://pan.cstcloud.cn/s/NrVkpdtLQTM" target="_blank">pdf文件</a>
 
+
+
+
+* 基于物联网的智能环境的入侵检测系统：一项调查
+    >M. F. Elrawy, A. I. Awad, and H. F. A. Hamed. Intrusion detection systems for IoT-based smart environments: A survey. Journal of Cloud Computing, 7(1):21, 2018
+    >- <a href="https://gitmind.cn/app/doc/d0b975528" target="_blank">思维导图</a> // <a href="https://pan.cstcloud.cn/s/BDLcCxySRJo" target="_blank">pdf文件</a>
 
 #### 设备识别
 
