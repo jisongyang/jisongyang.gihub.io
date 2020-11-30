@@ -30,6 +30,13 @@
     >M. F. Elrawy, A. I. Awad, and H. F. A. Hamed. Intrusion detection systems for IoT-based smart environments: A survey. Journal of Cloud Computing, 7(1):21, 2018
     >- <a href="https://gitmind.cn/app/doc/d0b975528" target="_blank">思维导图</a> // <a href="https://pan.cstcloud.cn/s/BDLcCxySRJo" target="_blank">pdf文件</a>
 
+
+
+
 #### 设备识别
 
 #### 异常检测
+
+* IoT-KEEPER：使用边缘的在线流量分析检测恶意物联网网络活动
+    >Hafeez, I., Antikainen, M., Ding, A. Y., & Tarkoma, S. (2020). IoT-KEEPER: Detecting Malicious IoT Network Activity Using Online Traffic Analysis at the Edge. IEEE Transactions on Network and Service Management, 17(1), 45–59. https://doi.org/10.1109/TNSM.2020.2966951
+    >- <a href="https://gitmind.cn/app/doc/676996795" target="_blank">思维导图</a> // <a href="https://pan.cstcloud.cn/s/k7qWt0BBSBM" target="_blank">pdf文件</a>
