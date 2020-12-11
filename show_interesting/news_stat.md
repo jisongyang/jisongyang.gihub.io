@@ -14,5 +14,5 @@
 
 <br><br>
 <div>
-    <img src="news_number.png" width=85%>
+    <img src="news_number.png" width=630>
 </div>
