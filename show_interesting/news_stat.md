@@ -13,6 +13,6 @@
 
 
 <br><br>
-<div align=center>
-    <img src="news_number.png">
+<div>
+    <img src="news_number.png" width=85%>
 </div>
