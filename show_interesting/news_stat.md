@@ -10,3 +10,9 @@
 <div align=center>
     <img src="news_stat.png">
 </div>
+
+
+<br><br>
+<div align=center>
+    <img src="news_number.png">
+</div>
