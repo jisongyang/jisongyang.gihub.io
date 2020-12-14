@@ -14,5 +14,5 @@
 
 <br><br>
 <div>
-    <img src="news_number.png" style="zoom:38%">
+    <img src="news_number.png" style="zoom:51%">
 </div>
