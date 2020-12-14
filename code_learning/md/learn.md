@@ -20,3 +20,10 @@
 
 * github会自动渲染md文件，只需要访问的时候去掉.md的后缀
     > 比如需要渲染 python/selenium.md，则访问 python/selenium 即可
+
+* 在md中插入图片并放缩，github的渲染不支持``width=80%``这种写法
+    ``` html
+    <div>
+        <img src="news_number.png" style="zoom:51%">
+    </div>
+    ```
