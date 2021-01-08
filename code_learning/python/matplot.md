@@ -65,3 +65,55 @@
         x_major_locator=MultipleLocator(interval)
         ax.xaxis.set_major_locator(x_major_locator)
     ```
+
+* 设置背景网格线
+    ``` python
+        plt.grid(axis, color, linestyle, linewidth,alpha)
+        # axis：  取值为‘both’， ‘x’，‘y’，或者省略
+        # alpha： 透明度
+    ```
+
+* 设置图例
+    ``` python
+        ax.legend(ncol,loc,frameon,markerscale,fontsize,bbox_to_anchor=(0.42,1.15))
+        # ncol：            列数
+        # loc：             位置，比如‘upper left'，‘lower right'等等
+        # frameon           是否设置图例边框
+        # markerscale       图例标记与原始标记的相对大小
+        # bbox_to_anchor    绝对位置
+    ```
+
+
+* 基本样式
+
+
+    |  marker | 样式  |  marker | 样式  |  marker | 样式  |marker | 样式  |
+    | :----:  | :----: | :----:  |:----: |  :----:   | :----: |:----:  | :----: |
+    | “.”     | 点 | “,”  | 像素点 |  “o”  | 圆 |“v”	 | 下三角 |
+    | “^”  | 上三叉 | “3”  | 左三叉 | “4”  | 右三叉 |“8”	| 八角形 |
+    |   “s”	|矩形     |“p”|	五边形|      “P”|	加（填充）|      “*”	|星星|
+    |  “h”	|六边形1  |   “H”	|六边形2   |  “+”	|加    |          “x”	|乘|
+    | “X”|	乘（填充）|  “D”|	菱形   |     “d”|	瘦菱形   |       “\|”	|竖线|
+     |    “_”|	横线
+
+
+    | linestyle| 样式  | linestyle | 样式  |  linestyle| 样式  |linestyle | 样式  |
+     | :----:  | :----: | :----:  |:----: |  :----:   | :----: |:----:  | :----: |
+     |    “-”   |  实线  |  “-.”  |  点横线| "." | 点线 | “--”|虚线|
+
+* 柱状图
+    ``` python
+        rect = ax2.bar(x, y, width, yerr,capsize,color, edgecolor='black'，label=legends)
+        # x：               柱状图中心线的横坐标，配合width可以实现偏移，画多个变量的柱状图
+        # width：           柱状图宽度
+        # yerr：            误差值
+        # capsize：         误差线上下两段横线的长度
+        # label:            图例中的名字
+    ```
+
+* 折线图
+    ``` python
+        ln1,=ax2.plot(x, y, marker, ms,linewidth,linestyle,color,mfc,label)
+        # ms：           marker的大小
+        # mfc：          marker的颜色
+    ```
