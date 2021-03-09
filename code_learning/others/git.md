@@ -61,13 +61,17 @@
     ```
 
 * git 使用ssh拉取github的仓库 ——[CSDN博客](https://blog.csdn.net/felicity294250051/article/details/53606158)
+    <font size=2>
     + Step1: 新建一个文件夹，打开git bush，输入`ls -al /.~ssh`，查看是否已经有公私密钥
     + Step2: 如果没有公私钥，或者C:\Users\用户名\\.ssh目录下没有id_rsa和id_rsa.pub文件，就生成公私钥(邮箱需要用双引号引起来)。然后全部默认设置，一直回车就行
+        <font size=3>
         ```git
         ssh-keygen -t rsa -C "github的注册邮箱"
         ```
+        </font>
     + Step3: 将公私钥添加到github上，在github的setting中找到SSH and GPG keys，添加新的SSH key，复制id_rsa.pub的内容粘贴进去
     + Step4: 测试是否添加SSH key成功
+        <font size=3>
         ```git
         ssh -T git@github.com
 
@@ -76,5 +80,7 @@
         # RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.
         # Are you sure you want to continue connecting (yes/no)?
         ```
+        </font>
+    </font>
 #### git error
 
