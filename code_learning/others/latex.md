@@ -104,3 +104,4 @@
         \setcounter{secnumdepth}{0}  
     ``` 
 #### latex error
+ * 乱入一个word的操作——[Word论文插入带有方括号序号的参考文献——尾注+交叉引用](https://blog.csdn.net/weixin_41683971/article/details/105413208)
