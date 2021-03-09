@@ -61,7 +61,7 @@
     ```
 
 * git 使用ssh拉取github的仓库 ——[CSDN博客](https://blog.csdn.net/felicity294250051/article/details/53606158)
-    ```markdown
+    ```git
     Step1: 新建一个文件夹，打开git bush，输入`ls -al /.~ssh`，查看是否已经有公私密钥
     Step2: 如果没有公私钥，或者C:\Users\用户名\\.ssh目录下没有id_rsa和id_rsa.pub文件，就生成公私钥(邮箱需要用双引号引起来)。然后全部默认设置，一直回车就行
         
