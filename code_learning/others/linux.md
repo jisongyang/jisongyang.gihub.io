@@ -16,4 +16,15 @@
 
 # linux
 
-### git command
+### linux command
+
+* 查看CUDA版本
+``` linux
+    cat  /usr/local/cuda/version.txt 
+```
+
+### conda command
+* conda查看已有环境
+``` linux
+    conda info -e
+```
