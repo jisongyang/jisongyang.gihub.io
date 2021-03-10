@@ -23,8 +23,19 @@
     cat  /usr/local/cuda/version.txt 
 ```
 
-### conda command
-* conda查看已有环境
+* 复制，剪切
 ``` linux
-    conda info -e
+    cp -rf path1 path2  # 复制path1到path2
+    mv -rf path1 path2  # 剪切path1到path2
+    mv -rf file1 file2  # 重命名file1为file2
+    rm -rf path         # 删除path下的所有文件
+```
+
+### conda command
+* conda虚拟环境
+``` linux
+    conda info -e                       # 查看已有虚拟环境
+    conda create -n name python=3.8     # 创建虚拟环境
+    source activate name                # 激活虚拟环境
+    source deactivate                   # 退出当前环境
 ```
