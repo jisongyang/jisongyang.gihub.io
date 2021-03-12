@@ -44,7 +44,7 @@
 
 * git remote
     ```git
-    git remote -V           查看远端仓库的别名
+    git remote -v           查看远端仓库的别名
     git remote rm origin    删除别名origin
     git remote rename a b   将别名a改为b
     ```
