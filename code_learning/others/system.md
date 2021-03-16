@@ -14,7 +14,7 @@
 <!-- ___________________________________________ -->
 <!-- ___________________________________________ -->
 
-# linux
+# System
 
 ### linux command
 
@@ -24,7 +24,7 @@
 ```
 
 * 复制，剪切
-``` linux
+``` shell
     cp -rf path1 path2  # 复制path1到path2
     mv -rf path1 path2  # 剪切path1到path2
     mv -rf file1 file2  # 重命名file1为file2
@@ -33,9 +33,17 @@
 
 ### conda command
 * conda虚拟环境
-``` linux
+``` shell
     conda info -e                       # 查看已有虚拟环境
     conda create -n name python=3.8     # 创建虚拟环境
     source activate name                # 激活虚拟环境
     source deactivate                   # 退出当前环境
+```
+
+### cmd
+
+* 管理员已阻止mmc.exe，依次执行下面的命令
+``` shell
+    dism /online /cleanup-image /restorehealth
+    sfc /scannow
 ```
