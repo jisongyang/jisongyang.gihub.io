@@ -31,6 +31,13 @@
     rm -rf path         # 删除path下的所有文件
 ```
 
+* 之前的操作命令
+``` shell
+    history n           # 显示最近n条命令
+    ctrl+r              # 搜索最近的命令，按键盘上左键或右键确定到输入状态
+```
+
+
 ### conda command
 * conda虚拟环境
 ``` shell

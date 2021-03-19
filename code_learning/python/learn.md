@@ -15,3 +15,25 @@
 <!-- ___________________________________________ -->
 
 # python learning
+
+* 让字典的每个value有初始值，第一次添加key自动生成value
+```python
+    import collections
+    d = collections.defaultdict(int)            # 初始值为整数型，默认为0
+    d = collections.defaultdict(list)           # 初始值为列表，默认为空
+    d = collections.defaultdict(lambda :10)     # 初始值设为10
+```
+
+* 字典排序
+```python
+    # 根据key排序，返回list
+    order_list = sorted(the_dict.items(), key=lambda d: d[0], reverse=False)
+    # 根据value排序，返回list
+    order_list = sorted(the_dict.items(), key=lambda d: d[0], reverse=False)
+    
+    import operator
+    # 根据key排序，返回dict
+    order_dict = dict(sorted(the_dict.items(), key=operator.itemgetter(0)))
+    # 根据value排序，返回dict
+    order_dict = dict(sorted(the_dict.items(), key=operator.itemgetter(1)))
+```
