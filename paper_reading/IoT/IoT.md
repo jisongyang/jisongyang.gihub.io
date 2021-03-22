@@ -41,6 +41,11 @@
     >Perdisci, R., Papastergiou, T., Alrawi, O., & Antonakakis, M. (2020). IoTFinder : Efficient Large-Scale Identification of IoT Devices via Passive DNS Traffic Analysis. IEEE European Symposium on Security and Privacy, 474–489.
     >- <a href="https://gitmind.cn/app/doc/9f1997330" target="_blank">思维导图</a> // <a href="https://pan.cstcloud.cn/s/ogrOpqcLT2o" target="_blank">pdf文件</a>
 
+* 您的智能家居无法保密：通过神经网络实现对IoT流量的自动指纹识别
+    >Dong S, Li Z, Tang D, et al. Your smart home can't keep a secret: towards automated fingerprinting of IoT traffic with neural networks[J]. arXiv preprint arXiv:1909.00104, 2019.
+    >- <a href="https://gitmind.cn/app/doc/8401400639" target="_blank">思维导图</a> // <a href="https://pan.cstcloud.cn/s/Ndjgu3LT7k" target="_blank">pdf文件</a>
+
+
 #### 异常检测
 
 * IoT-KEEPER：使用边缘的在线流量分析检测恶意物联网网络活动
