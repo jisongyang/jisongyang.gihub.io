@@ -51,3 +51,7 @@
 * IoT-KEEPER：使用边缘的在线流量分析检测恶意物联网网络活动
     >Hafeez, I., Antikainen, M., Ding, A. Y., & Tarkoma, S. (2020). IoT-KEEPER: Detecting Malicious IoT Network Activity Using Online Traffic Analysis at the Edge. IEEE Transactions on Network and Service Management, 17(1), 45–59. https://doi.org/10.1109/TNSM.2020.2966951
     >- <a href="https://gitmind.cn/app/doc/676996795" target="_blank">思维导图</a> // <a href="https://pan.cstcloud.cn/s/k7qWt0BBSBM" target="_blank">pdf文件</a>
+
+* 通过基于SDN的MUD活动监视来检测IoT设备上的容量攻击 
+    >Hamza A, Gharakheili H H, Benson T A, et al. Detecting volumetric attacks on lot devices via sdn-based monitoring of mud activity[C]//Proceedings of the 2019 ACM Symposium on SDN Research. 2019: 36-48.
+    >- <a href="https://gitmind.cn/app/doc/8851408149" target="_blank">思维导图</a> // <a href="https://pan.cstcloud.cn/s/xRoU2qN2QgA" target="_blank">pdf文件</a>
