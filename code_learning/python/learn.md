@@ -43,3 +43,8 @@
     from typing import List
     def permute(self, nums: List[int]) -> List[List[int]]:
 ```
+
+# leetcode onenote
+
+ <a href="https://onedrive.live.com/view.aspx?resid=BC45C406A7EBE536%212244&id=documents&wd=target%28%E6%97%A5%E5%B8%B8%E5%88%B7%E9%A2%98.one%7C52F0C452-BEC8-4DA7-801F-9BEC63928BD3%2F%29
+onenote:https://d.docs.live.net/bc45c406a7ebe536/文档/leetcode/日常刷题.one#section-id={52F0C452-BEC8-4DA7-801F-9BEC63928BD3}&end" target="_blank">日常刷题</a> 
