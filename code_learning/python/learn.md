@@ -37,3 +37,9 @@
     # 根据value排序，返回dict
     order_dict = dict(sorted(the_dict.items(), key=operator.itemgetter(1)))
 ```
+
+* 变量类型定义
+```python
+    from typing import List
+    def permute(self, nums: List[int]) -> List[List[int]]:
+```
