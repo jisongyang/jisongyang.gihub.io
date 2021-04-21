@@ -56,3 +56,10 @@
     dism /online /cleanup-image /restorehealth
     sfc /scannow
 ```
+
+### windows
+* 更新host
+``` shell
+    路径：  C:\Windows\System32\drivers\etc
+    追加：  github.com 192.30.255.113
+```
