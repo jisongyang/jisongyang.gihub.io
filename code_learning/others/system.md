@@ -39,6 +39,14 @@
                         # 如果是需要的按键盘上左键或右键确定到输入状态
 ```
 
+* 查看文件信息
+``` shell
+    df -h               # 查看系统一级文件信息
+    du -sh *            # 查看当前文件夹下各文件大小
+    ls -lrt             # -l use a long listing format 以长列表方式显示（详细信息方式）
+                        # -t sort by modification time 按修改时间排序（最新的在最前面）
+                        # -r reverse order while sorting （反序）
+```
 
 ### conda command
 * conda虚拟环境
@@ -59,7 +67,7 @@
 
 ### windows
 * 更新host
-``` shell
+``` sh
     路径：  C:\Windows\System32\drivers\etc
     追加：  github.com 192.30.255.113
 ```
