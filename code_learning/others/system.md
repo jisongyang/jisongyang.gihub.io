@@ -23,6 +23,11 @@
     cat  /usr/local/cuda/version.txt 
 ```
 
+* 赋予文件全线
+``` linux
+    chmod 777 file
+```
+
 * 复制，剪切
 ``` shell
     cp -rf path1 path2  # 复制path1到path2
