@@ -27,3 +27,10 @@
         <img src="news_number.png" style="zoom:51%">
     </div>
     ```
+* github访问md文件时会在最顶端自动添加一个主标题（`<h1>一个标题</h1>`）
+
+    ```js
+    //1.可以使用一个`<div>一个自定义的好看的块<div>`来覆盖掉标题，需要让div强制置顶
+    //2.在md中添加js代码隐藏掉主标题h1
+        document.getElementsByTagName('h1')[0].style.display = 'none';
+    ```
