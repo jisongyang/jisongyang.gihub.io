@@ -74,5 +74,11 @@
 * 更新host
 ``` sh
     路径：  C:\Windows\System32\drivers\etc
-    追加：  github.com 192.30.255.113
+    追加：  github.com 192.30.255.113ß
 ```
+
+### vimniunm key
+* <kbd>o</kbd>      打开一个页面中间的搜索框，在本页面搜索
+* <kbd>gi</kbd>     定位到搜索引擎的搜索框
+* <kbd>gg</kbd>    回到页面顶部
+* <kbd>x\X</kbd>    关闭\恢复标签页

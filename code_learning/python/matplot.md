@@ -117,4 +117,12 @@
         # ms：           marker的大小
         # mfc：          marker的颜色
     ```
-    
+
+* 配置默认的颜色
+    ```python
+        import seaborn as sns
+        import matplotlib.colors
+
+        color_list =sns.color_palette("hls", 8)                         # 生成8种配色，RGB格式
+        color_list=[matplotlib.colors.to_hex(x) for x in color_list]    # RGB转为16进制
+    ```
