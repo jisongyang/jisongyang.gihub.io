@@ -5,6 +5,7 @@
     var oDiv = document.getElementById('head');
     oDiv.style.position = 'fixed'; oDiv.style.top = '0px'; oDiv.style.left = '0px';
     document.title="profile";
+    document.getElementsByTagName('h1')[0].style.display = 'none';
 </script>
 <br><br>
 <!-- ___________________________________________ -->
