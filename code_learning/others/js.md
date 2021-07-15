@@ -44,3 +44,33 @@
             document.title="others/js";
         </script>
     ```
+
+* 设置多个按钮鼠标点击变色，同时点击修改frame的src
+    ``` html
+        <iframe id='head' align="right" width="80%" height="800" src=""  frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no" name="Frame1">
+        </iframe>
+
+        <style>
+            .active{
+                color:red;
+            }
+        </style>
+
+        <script type="text/javascript">
+            var buttons=document.getElementsByTagName("button");
+            var l=buttons.length;
+            for(var i=0;i<l;i++){
+                buttons[i].onclick=function(){
+                    document.getElementById('head').src=this.getAttribute("now_src");
+                    for(var j=0;j<l;j++){
+                        if(this==buttons[j]){
+                            this.className="active";
+                        }else{
+                            buttons[j].className="";
+                        }
+        
+                    }
+                }
+            }
+        </script>
+    ```

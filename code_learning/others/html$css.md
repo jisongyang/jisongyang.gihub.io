@@ -69,3 +69,16 @@
         border-right: 50px solid transparent;
         border-bottom: 100px solid red;
     ```
+
+* 多个按钮，最上层显示，分散对齐，垂直有滚动条
+    ```css
+        .src_button{
+            text-align: justify;
+            text-align-last: justify;
+            z-index: 9999;
+			top: 20px;
+            width: 15%;
+            height: 800px;
+            overflow-y: auto;
+        }
+    ```

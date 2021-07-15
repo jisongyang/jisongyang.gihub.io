@@ -77,6 +77,17 @@
         # Are you sure you want to continue connecting (yes/no)?
     Step5: 在新建的文件下，git clone 仓库ssh地址
      ```
+* git退回某个版本
+    ```git
+    查看提交的版本信息
+    git log --graph
+
+    回退到某个版本               
+    git reset --hard 目标版本号
+
+    强制推到云端
+    git push -f     
+    ```
      
 #### git error
 
