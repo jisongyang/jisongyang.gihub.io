@@ -58,6 +58,29 @@
     sum2 = reduce(lambda x, y: x+y, [1,2,3,4,5])    # 使用 lambda 匿名函数
 ```
 
+
+
+
+* pipenv虚拟环境
+```shell
+    pip install pipenv                  # 安装pipenv
+    pipenv install --python 3.7         # 创建虚拟环境（选择一个文件夹，在当前文件夹下）
+    pipenv shell                        # 激活虚拟环境
+    pipenv install pyinstaller          # 安装需要的包
+    pip list                            # 查看当前环境已安装的包
+```
+
+* pyinstaller
+```shell
+    # -F 生成单个exe
+    # -D 生成多个文件，包括依赖文件
+    # -w 不调用控制台窗口（调用可以看到运行失败的报错信息） 
+    # -p 导入其他相关文件
+    # -i 设置生成exe的图标
+
+    
+```
+
 # leetcode onenote
 
  <a href="https://onedrive.live.com/view.aspx?resid=BC45C406A7EBE536%212244&id=documents&wd=target%28%E6%97%A5%E5%B8%B8%E5%88%B7%E9%A2%98.one%7C52F0C452-BEC8-4DA7-801F-9BEC63928BD3%2F%29

@@ -77,6 +77,30 @@
         # Are you sure you want to continue connecting (yes/no)?
     Step5: 在新建的文件下，git clone 仓库ssh地址
      ```
+
+* git 提交代码（多人共用，远端冲突）
+    ```git
+    先本地commit
+    git commit -m 'www'
+
+    再拉云端代码(如果有云端修改其他文件，会合并；如果有本地冲突，需要解决)
+    git pull origin
+
+    最后再推云端
+    git push origin
+    ```
+
+* git 强行覆盖本地代码
+    ```git
+    下载云端代码
+    git fetch --all
+
+    覆盖本地代码
+    git reset --hard origin
+
+    git pull
+    ```
+
 * git退回某个版本
     ```git
     查看提交的版本信息
