@@ -42,22 +42,36 @@
     git add .   提交新文件(new)和被修改(modified)文件，不包括被删除(deleted)文件
     ```
 
+* git reset
+    ```git
+    git reset                   不带参数，撤回当前的缓存内容（比如add），回退到上一次commit的内容
+    git reset HEAD^             回退所有内容到上一个版本  
+    git reset HEAD^ hello.py    回退 hello.py 文件的版本到上一个版本
+    git reset HEAD hello.py     只在commit时忽略hello.py 文件当前的缓存  
+    git  reset  版本号           回退到指定版本
+    ```
+
 * git remote
     ```git
-    git remote -v           查看远端仓库的别名
-    git remote rm origin    删除别名origin
-    git remote rename a b   将别名a改为b
+    git remote -v               查看远端仓库的别名
+    git remote rm origin        删除别名origin
+    git remote rename a b       将别名a改为b
     ```
 
 * git 忽略提交文件
     ```git
-    touch .gitignore    创建gitignore文件
+    touch .gitignore            创建gitignore文件
         
     在gitignore文件添加指定的忽略文件（可以使用vim编辑）
-    target              忽略这个target目录
-    angular.json        忽略这个angular.json文件
-    log/*               忽略log下的所有文件
-    css/*.css           忽略css目录下的.css文件
+    target                      忽略这个target目录
+    angular.json                忽略这个angular.json文件
+    log/*                       忽略log下的所有文件
+    css/*.css                   忽略css目录下的.css文件
+
+    在gitignore文件添加指定的留下文件，忽略其他所有文件
+    *                           忽略所有文件
+    !*.py                       不忽略py文件
+    !*/                         不忽略文件夹（配合上面一句，不忽略所有子目录下的py文件）
     ```
 
 * git 使用ssh拉取github的仓库 ——[CSDN博客](https://blog.csdn.net/felicity294250051/article/details/53606158)

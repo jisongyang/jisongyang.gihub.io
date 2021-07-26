@@ -77,8 +77,7 @@
     # -w 不调用控制台窗口（调用可以看到运行失败的报错信息） 
     # -p 导入其他相关文件
     # -i 设置生成exe的图标
-
-    
+    pyinstaller -F -w -i show.icon test.py
 ```
 
 # leetcode onenote
