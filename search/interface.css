@@ -1,0 +1,152 @@
+
+/* 
+.result div{
+    width: 170px;
+    height: 60px;
+    display: flex;
+    flex-wrap: wrap;
+} */
+
+
+/* 设置整个界面 */
+.show_interface{
+    position: absolute;
+    /* 让左上角距离顶端偏移 */
+    top: 50%;
+    /* 让左上角距离左侧偏移 */
+    left: 50%;
+    /* 左移和上移自身的50% */
+    transform: translate(-50%,-50%);
+    /* 圆角 */
+    border-radius: 5px;
+    width: 80%;
+    height: 80%;
+    overflow: hidden;
+}
+
+/* 设置搜索面板 */
+.search_panel{
+    /* 在父元素的范围内居左 */
+    float: left;
+    /* 设置占父元素的长宽比，前提是父元素已经设置了长宽 */
+    width: 29%;
+    height: 100%;
+    position: relative;
+    /* display: flex;
+    justify-content: center; */
+    border: 1px solid #000;
+}
+.border{
+    width: 80%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translate(0%,-50%);
+}
+.border p,input{
+    /* 让border中属于同一个父元素下的p，Input元素横向排列 */
+    display: inline-block;
+}
+.border input{
+    width: 50px;
+    height: 30px;
+}
+.content input{
+    width: 250px;
+    height: 30px;
+}
+
+
+/* 设置查询清空按钮 */
+.action{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+.action button{
+    margin: auto;
+    width: 50px;
+    height: 50px;
+
+}
+
+
+/* 设置结果面板 */
+.result_panel{
+    /* 在父元素的范围内居右 */
+    float: right;
+    width: 69%;
+    height: 100%;
+    border: 1px solid #000;
+}
+
+
+/* 设置结果面板上半部分 */
+.result_up{
+    display:flex;
+    flex-direction: row;
+    height: 30%;
+    border: 1px solid #000;
+    
+}
+
+/* 设置结果面板上半部分的左右两部分 */
+#date_lis,#date_sta{
+    display: inline-block;
+    width: 50%;
+    height:100%;
+    /* overflow-y: auto; */
+    /* border: 1px solid #000; */
+}
+
+.src_button{
+    width: 100%;
+    height: 100%;
+}
+
+/* 设置按钮菜单栏 */
+.button_menu{
+    height: 20%;
+    border: 1px solid #000;
+    /* 内部元素分散对齐 */
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 设置按钮占整个父元素的长宽比 */
+.button_menu button{
+    width: 20%;
+    height: 100%;
+}
+/* 设置按钮显示部分 */
+.button_show{
+    height: 80%;
+    /* 纵向超出使用滑动条 */
+    overflow-y: auto;
+}
+
+
+/* 设置结果面板下半部分 */
+.result_down{
+    display:flex;
+    flex-direction: row;
+    height: 70%;
+    /* border: 1px solid #000; */
+    
+}
+/* 设置内容显示 */
+#content_show{
+    width: 100%;
+    height:100%;
+    border: 1px solid #000;
+    overflow-y: auto;
+}
+
+/* 设置文本 */
+p{
+    columns: #4a4a4a;
+    margin-top: 30px;
+    margin-bottom: 6px;
+    font-stretch: 15px;
+}

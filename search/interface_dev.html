@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>search</title>
+    <link rel="stylesheet" href="interface.css">
+    <script src="interface.js"></script>
+    <!-- <script>
+        var password="";
+        password=prompt('请输入密码:','');
+        if (password != 'mucaogong')
+            {
+                alert("密码不正确,无法进入本站!!");
+                window.opener=null;
+                window.close();
+            } 
+    </script> -->
+
+
+</head>
+<body>
+        <div class="show_interface" style="border: 1px solid #000;">
+            <div class="search_panel">
+                <div class="border" style="border: 1px solid #000;">
+                    <div class="content">
+                        <p>搜索内容</p>
+                        <input type="content">
+                    </div>
+                    <div class="date">
+                        <p>日期</p>
+                        <input type="content">
+                        <p>年</p>
+                        <input type="content">
+                        <p>月</p>
+                        <input type="content">
+                        <p>日</p>
+                    </div>
+                    <div class="length">
+                        <p>长度</p>
+                        <p>最长</p>
+                        <input type="content">
+                        <p>最短</p>
+                        <input type="content">
+                    </div>
+                    <div class="action">
+                        <button type="button">查询</button>
+                        <button type="button">清空</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="result_panel">               
+                <div class="result_up">
+                    <div id="date_lis" style="border: 1px solid #000;">
+                        <div class='src_button'>
+                            <div class="button_menu">
+                                <button>上一条</button> 
+                                <button>显示全部</button> 
+                                <button>下一条</button> 
+                            </div>
+                            <div class="button_show">
+
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                    <div id='date_sta' style="border: 1px solid #000;"></div>
+                </div>
+                <div class="result_down">
+                    <div id='content_show'></div>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>
