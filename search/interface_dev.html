@@ -21,34 +21,54 @@
 
 </head>
 <body>
-        <div class="show_interface" style="border: 1px solid #000;">
+        <div class="show_interface">
             <div class="search_panel">
-                <div class="border" style="border: 1px solid #000;">
+                <div class="border">
                     <div class="content">
-                        <p>搜索内容</p>
-                        <input type="content" id='content'>
+                        <div class=content_text>
+                            <p><b>内容</b></p>
+                        </div>
+                        <div class="c_input">
+                            <input type="content" id='content' value="我">
+                        </div>
                     </div>
                     <div class="date">
-                        <p>日期</p>
-                        <input type="content" id='year'>
-                        <p>年</p>
-                        <input type="content" id='month'>
-                        <p>月</p>
-                        <input type="content" id='day'>
-                        <p>日</p>
+                        <div class="date_text">
+                            <p><b>日期</b></p>
+                        </div>
+                        <div class="year">
+                            <input type="content" id='year'>
+                            <p>年</p>
+                        </div>
+                        <div class="month">
+                            <input type="content" id='month'>
+                            <p>月</p>
+                        </div>
+                        <div class="day">
+                            <input type="content" id='day'>
+                            <p>日</p>
+                        </div>
                     </div>
                     <div class="length">
-                        <p>长度</p>
-                        <p>最长</p>
-                        <input type="content" id='max_length'>
-                        <p>最短</p>
-                        <input type="content" id='min_length'>
+                        <div class="length_text">
+                            <p><b>长度</b></p>
+                        </div>
+                        <div class="max">
+                            <p>最长</p>
+                            <input type="content" id='max_length'>
+                        </div>
+                        <div class="min">
+                            <p>最短</p>
+                            <input type="content" id='min_length'>
+                        </div>
+
                     </div>
                     <div class="action">
-                        <button type="button" onclick="search_content()">查询</button>
-                        <button type="button">清空</button>
+                        <button type="button" onclick="search()">查询</button>
+                        <button type="button" onclick="delete_all()"">清空</button>
                     </div>
                 </div>
+
             </div>
             
             <div class="result_panel">               
@@ -57,10 +77,22 @@
                         <div class='src_button'>
                             <div class="button_menu">
                                 <button>上一条</button> 
-                                <button>显示全部</button> 
+                                <!-- <button>显示全部</button>  -->
+                                <div class="num">
+                                    <div class="num_up">
+                                        <div>第</div>
+                                        <div id="now_num">0</div>
+                                        <div>个</div>
+                                    </div>
+                                    <div class="num_down">
+                                        <div>共</div>
+                                        <div id="total_num">0</div>
+                                        <div>个</div>
+                                    </div>
+                                </div>
                                 <button>下一条</button> 
                             </div>
-                            <div class="button_show">
+                            <div class="button_show" id="button_show">
 
                                 <br>
                             </div>

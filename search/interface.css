@@ -1,12 +1,4 @@
 
-/* 
-.result div{
-    width: 170px;
-    height: 60px;
-    display: flex;
-    flex-wrap: wrap;
-} */
-
 
 /* 设置整个界面 */
 .show_interface{
@@ -19,7 +11,7 @@
     transform: translate(-50%,-50%);
     /* 圆角 */
     border-radius: 5px;
-    width: 80%;
+    width: 90%;
     height: 80%;
     overflow: hidden;
 }
@@ -30,31 +22,94 @@
     float: left;
     /* 设置占父元素的长宽比，前提是父元素已经设置了长宽 */
     width: 29%;
-    height: 100%;
+    height: 99%;
     position: relative;
     /* display: flex;
     justify-content: center; */
     border: 1px solid #000;
 }
 .border{
-    width: 80%;
-    height: auto;
+    width: 90%;
+    height: 50%;
     position: absolute;
     top: 50%;
-    left: 10%;
+    /* left: 5%; */
     transform: translate(0%,-50%);
+    /* border: 1px solid #000; */
 }
+
+/* 设置 p和input放在一行 */
 .border p,input{
-    /* 让border中属于同一个父元素下的p，Input元素横向排列 */
     display: inline-block;
 }
-.border input{
-    width: 50px;
-    height: 30px;
+
+/* 设置面板三个输入div */
+.content,.date,.length{
+    /* 水平居中 */
+    margin: 0 auto;
+    width: 90%;
+    height: auto;
+    /* border: 1px solid #000; */
+    position: relative;
+
+    margin-top: 30px;
+    /* 内部元素分散对齐 */
+    display: flex;
+    justify-content: space-between;
+}
+/* 设置内容输入 */
+.content_text{
+    width: 24%;
+    /* border: 1px solid #000; */
+    text-align: center;
+    display:flex;
+}
+.content_text p{
+    margin: auto;
+}
+.c_input{
+    width: 70%;
+    /* border: 1px solid #000; */
+    text-align: center;   
 }
 .content input{
-    width: 250px;
+    /* float: left; */
+    width: 90%;
     height: 30px;
+    text-align: center;
+}
+
+/* 设置日期输入 */
+.date_text,.year,.month,.day{
+    /* float: left; */
+    width: 24%;
+    /* border: 1px solid #000; */
+    text-align: center;
+}
+.date input{
+    /* float: left; */
+    width: 50%;
+    height: 30px;
+    text-align: center;
+}
+
+
+/* 设置长度输入 */
+.length_text{
+    width: 24%;
+    /* border: 1px solid #000; */
+    text-align: center;
+}
+.max,.min{
+    width: 33%;
+    /* border: 1px solid #000; */
+    text-align: center;
+}
+.length input{
+    /* float: left; */
+    width: 50%;
+    height: 30px;
+    text-align: center;
 }
 
 
@@ -63,6 +118,7 @@
     display: flex;
     justify-content: space-between;
     margin: 10px;
+    margin-top: 30px;
 }
 .action button{
     margin: auto;
@@ -77,8 +133,8 @@
     /* 在父元素的范围内居右 */
     float: right;
     width: 69%;
-    height: 100%;
-    border: 1px solid #000;
+    height: 99%;
+    /* border: 1px solid #000; */
 }
 
 
@@ -87,7 +143,7 @@
     display:flex;
     flex-direction: row;
     height: 30%;
-    border: 1px solid #000;
+    /* border: 1px solid #000; */
     
 }
 
@@ -116,14 +172,30 @@
 
 /* 设置按钮占整个父元素的长宽比 */
 .button_menu button{
-    width: 20%;
-    height: 100%;
+    width: 15%;
+    height: 80%;
+    margin: 5px;
 }
+
+.num_up,.num_down{
+    display: flex;
+    justify-content: space-between;
+}
+
 /* 设置按钮显示部分 */
 .button_show{
     height: 80%;
+    /* 每一行按钮居中 */
+    /* text-align: center; */
     /* 纵向超出使用滑动条 */
-    overflow-y: auto;
+    overflow-y: auto
+}
+.button_show button{
+    width: 130px;
+    text-align: left;
+}
+.active{
+    color: red;
 }
 
 
@@ -132,14 +204,17 @@
     display:flex;
     flex-direction: row;
     height: 70%;
-    /* border: 1px solid #000; */
+    border: 1px solid #000;
     
 }
 /* 设置内容显示 */
 #content_show{
     width: 100%;
-    height:100%;
-    border: 1px solid #000;
+    height:96%;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    /* border: 1px solid #000; */
     overflow-y: auto;
 }
 
