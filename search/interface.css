@@ -14,7 +14,7 @@
     width: 90%;
     height: 80%;
     overflow: hidden;
-    display: inline-flex;
+    /* display: inline-flex; */
 }
 
 /* 设置搜索面板 */
@@ -22,8 +22,9 @@
     /* 在父元素的范围内居左 */
     float: left;
     /* 设置占父元素的长宽比，前提是父元素已经设置了长宽 */
-    max-width: 350px;
-    min-width: 300px;
+    /* max-width: 350px; */
+    /* min-width: 300px; */
+    width: 25%;
     height: 99%;
     position: relative;
     /* display: flex;
@@ -146,8 +147,7 @@
 .result_panel{
     /* 在父元素的范围内居右 */
     float: right;
-    /* width: 69%; */
-    width: auto;
+    width: 74%;
     height: 99%;
     /* border: 1px solid #000; */
 }
