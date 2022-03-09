@@ -22,8 +22,8 @@
     /* 在父元素的范围内居左 */
     float: left;
     /* 设置占父元素的长宽比，前提是父元素已经设置了长宽 */
-    width: 100%;
     max-width: 350px;
+    min-width: 300px;
     height: 99%;
     position: relative;
     /* display: flex;
