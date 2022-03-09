@@ -22,7 +22,7 @@
     /* 在父元素的范围内居左 */
     float: left;
     /* 设置占父元素的长宽比，前提是父元素已经设置了长宽 */
-    width: 29%;
+    width: 100%;
     max-width: 350px;
     height: 99%;
     position: relative;
@@ -146,7 +146,8 @@
 .result_panel{
     /* 在父元素的范围内居右 */
     float: right;
-    width: 69%;
+    /* width: 69%; */
+    width: auto;
     height: 99%;
     /* border: 1px solid #000; */
 }
