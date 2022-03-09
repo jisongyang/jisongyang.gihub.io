@@ -1,7 +1,7 @@
 
 
 
-var total_data;
+var total_data,read_flag;
 var content,year,month,day,max_length,min_length;
 var total_num=0,now_num=0,pre_num=0
 
@@ -33,13 +33,20 @@ function delete_all(){
 // 查询按钮函数
 function search(){
     // 读取数据
-    total_data=read_json();
-    // 读取搜索条件
-    content,year,month,day,max_length,min_length=read_input();
-    // 得到搜索结果
-    search_result=get_result(total_data);
-    // 展示搜索结果
-    show_reseult(search_result);
+    read_flag,total_data=read_json();
+
+    if(read_flag){
+        // 读取搜索条件
+        content,year,month,day,max_length,min_length=read_input();
+        // 得到搜索结果
+        search_result=get_result(total_data);
+        // 展示搜索结果
+        show_reseult(search_result);
+    }else{
+        delete_all()
+    }
+
+
 }
 
 
@@ -55,13 +62,28 @@ function search(){
 
 // 读取json文件
 function read_json(){
+    var key=document.getElementById('www').value
+    var total_data=''
     $.ajaxSetup({async:false})
-    $.getJSON("use_json.json", function(data) {
+    $.getJSON("use_json2.json", function(data) {
         //data 代表读取到的json中的数据
-        total_data=data.res;
+        total_data_pre=data.res;
+        // console.log(total_data_pre);
+        
+        for (var nowchar of total_data_pre.split('_')){
+            total_data+=String.fromCharCode(nowchar.charCodeAt()+Number(key))
+        }
         // console.log(total_data);
+        try{
+            total_data=eval("("+total_data+")");
+            // console.log(total_data);
+            read_flag=true
+        } catch(err){
+            // console.log('');
+            read_flag=false
+        }
     });
-    return total_data
+    return read_flag,total_data
 }
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

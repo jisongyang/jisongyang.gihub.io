@@ -28,6 +28,18 @@
     justify-content: center; */
     border: 1px solid #000;
 }
+
+.www{
+    width: 100%;
+    /* border: 1px solid #000; */
+    text-align: center;
+}
+
+.www input{
+    width:90%;
+    text-align: center;
+}
+
 .border{
     width: 90%;
     height: 50%;
