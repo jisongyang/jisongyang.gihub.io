@@ -234,6 +234,10 @@ function show_content(search_result){
     }
     if(content_html==''){
         content_html='没有搜索结果=。='
+        document.getElementById('total_num').innerHTML=0
+        document.getElementById('now_num').innerHTML=0
+        
+        document.getElementById('button_show').innerHTML=''
     }
     // 将html写入
     var content_show=document.getElementById('content_show')
@@ -247,9 +251,17 @@ function show_content(search_result){
 // 显示搜索结果的按钮
 function show_button(search_result){
     var button_html=''
+    var pre_month=search_result[0].date[0].split('-')[1],now_month=''
     for (var i in search_result){
         ob=search_result[i]
+        now_month=ob.date[0].split('-')[1]
+        if(now_month!=pre_month){
+            button_html+='<br><br>'
+        }
+        pre_month=now_month
+
         button_html=button_html+`<button id="button_${i}" class="" now_src="${i}" onclick="tonclick(this)">${ob.date[0]}&emsp;${ob.length}</button>`
+
     }
     // 将html写入
     var button_show=document.getElementById('button_show')

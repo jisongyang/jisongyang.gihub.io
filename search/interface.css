@@ -14,6 +14,7 @@
     width: 90%;
     height: 80%;
     overflow: hidden;
+    display: inline-flex;
 }
 
 /* 设置搜索面板 */
@@ -22,6 +23,7 @@
     float: left;
     /* 设置占父元素的长宽比，前提是父元素已经设置了长宽 */
     width: 29%;
+    max-width: 350px;
     height: 99%;
     position: relative;
     /* display: flex;
@@ -188,23 +190,44 @@
     height: 80%;
     margin: 5px;
 }
+.num{
+    width: 25%;
+    height: 100%;
+    /* border: 1px solid #000; */
+    align-items:center;
+    justify-content: space-between;
+    /* display: flex; */
+    /* justify-content:center;
+    /* display:-webkit-flex; */ 
+    /* transform: translate(0,25%); */
+    /* text-align: center; */
+    /* margin: 5px; */
+}
 
 .num_up,.num_down{
     display: flex;
+    width: 100%;
+    max-width: 80px;
+    height: 50%;
     justify-content: space-between;
+    /* border: 1px solid #000; */
+    text-align: justify;
+    /* line-height: 100%; */
 }
 
 /* 设置按钮显示部分 */
 .button_show{
-    height: 80%;
+    height: 78%;
     /* 每一行按钮居中 */
     /* text-align: center; */
     /* 纵向超出使用滑动条 */
-    overflow-y: auto
+    overflow-y: auto;
+    /* padding-bottom: -30px; */
 }
 .button_show button{
     width: 130px;
     text-align: left;
+    /* margin-right: 5px; */
 }
 .active{
     color: red;
