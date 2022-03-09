@@ -10,7 +10,7 @@
     /* 左移和上移自身的50% */
     transform: translate(-50%,-50%);
     /* 圆角 */
-    border-radius: 5px;
+    /* border-radius: 5px; */
     width: 90%;
     height: 80%;
     overflow: hidden;
@@ -168,7 +168,7 @@
     width: 50%;
     height:100%;
     /* overflow-y: auto; */
-    /* border: 1px solid #000; */
+    border: 1px solid #000;
 }
 
 .src_button{
@@ -232,6 +232,38 @@
 }
 .active{
     color: red;
+}
+
+
+/* 设置统计显示菜单 */
+.sta_menu{
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 20%;
+    border: 1px solid #000;
+}
+
+
+.sta_show{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    /* border: 1px solid #000; */
+}
+
+/* 设置统计显示 */
+.sta_box{
+    width: 90%;
+    height: 90%;
+    /* padding-left: 2%; */
+    /* padding-right: 2%; */
+    /* text-align: center; */
+    /* border: 1px solid #000; */
 }
 
 

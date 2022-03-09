@@ -42,7 +42,11 @@ function search(){
         search_result=get_result(total_data);
         // 展示搜索结果
         show_reseult(search_result);
+        // 展示搜索结果统计
+        show_sta(search_result)
+
     }else{
+        // 清空界面
         delete_all()
     }
 
@@ -278,10 +282,113 @@ function show_button(search_result){
 
 }
 
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// 展示搜索结果统计
+function show_sta(search_result){
+    // 展示月份统计
+    var count_month={};
+    for(var ob of search_result){
+        var now_month=ob.date[0].slice(0,-3)
+        if(count_month.hasOwnProperty(now_month)){
+            count_month[now_month]+=1;
+        }else{
+            count_month[now_month]=1;
+        }
+    }
+    var keys=Object.keys(count_month);
+    var values=Object.values(count_month);
+    var x_interval=Math.floor(count_month.length/5)
+    var y_interval=Math.floor(Math.max(...values)/3)
+    show_every_month(keys,values,x_interval,y_interval);
+    // 展示时间统计
+}
+
+// ………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………
 
 
+// ………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………
+
+// 画出月份统计图
+function show_every_month(keys,values,x_interval,y_interval){
+    var oMyChart = echarts.init(document.getElementById("sta_box"));
+    var option = {
+                // 定义样式和数据
+                // backgroundColor: '#FBFBFB',
+                grid:{
+                    y:'20%',
+                    width:'95%',
+                    height:'50%',
+                    // left:'12%',
+                    // right:'1%',
+
+                },
+                tooltip : {
+                    trigger: 'axis'
+                },
+                legend: {
+                    data:['每个月出现次数']
+                },
+
+                calculable : true,
 
 
+                xAxis : [
+                    {
+                        axisLabel:{
+                            rotate: 40,
+                            interval:x_interval,
+                        },
+                        axisLine:{
+                            lineStyle :{
+                            color:'black'
+                            }
+                        },
+                        type : 'category',
+                        boundaryGap : ['0.2','0.2'],
+                        name:'月份',
+                        // data : function (){
+                        //     var list = [];
+                        //     for (var i = 1; i <= 12; i++) {
+                        //         list.push(i)
+                        //     }
+                        //     return list;
+                        // }(),
+                        data:keys,
+                    }
+                ],
+                yAxis : [
+                    {
+                        type : 'value',
+                        interval:y_interval,
+                        name:'次数',
+                        axisLine:{
+                            // show:true,
+                            lineStyle :{
+                                // color: '#CECECE'
+                                color:'black'
+                            }
+                        },
+                        // axisTick:{
+                        //     show:true,
+                        // }
+                    }
+                ],
+                series : [
+                    {
+                        name:'每个月出现次数',
+                        type:'line',
+                        symbol:'none',
+                        smooth: 0.1,
+                        color:['#66AEDE'],
+                        data:values
+                    },
+                ],
+
+                };
+    oMyChart.setOption(option);
+}
 
 
 
@@ -333,3 +440,5 @@ function active_button(now_num,pre_num){
 // ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 // ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 // ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+
+

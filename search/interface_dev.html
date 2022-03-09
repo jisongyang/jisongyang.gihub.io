@@ -7,6 +7,7 @@
     <title>search</title>
     <link rel="stylesheet" href="interface.css">
     <script src='http://code.jquery.com/jquery-1.4.1.min.js'></script>
+    <script src="echarts.min.js"></script>
     <script src="interface.js"></script>
     <!-- <script>
         var password="";
@@ -25,7 +26,7 @@
         <div class="show_interface">
             <div class="search_panel">
                 <div class="www">
-                    <input id='www'>
+                    <input id='www' value="-97"> 
                 </div>
                 <div class="border">
                     <div class="content">
@@ -100,7 +101,16 @@
                             </div>
                         </div>
                     </div>
-                    <div id='date_sta' style="border: 1px solid #000;"></div>
+                    <div id='date_sta'>
+                        <div class="sta_menu">
+                            <div id="month_sta">月份统计</div>
+                            <div id="time_sta">时间统计</div>
+                        </div>
+                        <div class="sta_show">
+                            <div class="sta_box" id="sta_box"></div>
+                        </div>
+                        
+                    </div>
                 </div>
                 <div class="result_down">
                     <div id='content_show'></div>
