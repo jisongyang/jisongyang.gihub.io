@@ -2,11 +2,8 @@
 
 
 var total_data,read_flag;
-var content,year,month,day,max_length,min_length;
+var content,year,month,day,start_time,end_time,max_length,min_length;
 var total_num=0,now_num=0,pre_num=0
-
-
-
 
 
 
@@ -20,14 +17,28 @@ function delete_all(){
     document.getElementById('year').value=''
     document.getElementById('month').value=''
     document.getElementById('day').value=''
+    document.getElementById('start_time').value=''
+    document.getElementById('end_time').value=''
     document.getElementById('max_length').value=''
     document.getElementById('min_length').value=''
 
     document.getElementById('total_num').innerHTML=0
     document.getElementById('now_num').innerHTML=0
+
+    document.getElementById('count_aim').innerHTML='';
+    document.getElementById('count_sta').innerHTML='';
     
     document.getElementById('button_show').innerHTML=''
     document.getElementById('content_show').innerHTML=''
+
+    document.getElementById('month_sta_box').innerHTML=''
+    document.getElementById('month_sta').className='';
+    document.getElementById('time_sta_box').innerHTML=''
+    document.getElementById('time_sta').className='';
+
+    // 删除echarts初始化带来的标签，才能进行再一次初始化
+    document.getElementById('month_sta_box').removeAttribute('_echarts_instance_')
+    document.getElementById('time_sta_box').removeAttribute('_echarts_instance_')
 }
 
 // 查询按钮函数
@@ -42,21 +53,11 @@ function search(){
         search_result=get_result(total_data);
         // 展示搜索结果
         show_reseult(search_result);
-        // 展示搜索结果统计
-        show_sta(search_result)
-
     }else{
         // 清空界面
         delete_all()
     }
-
-
 }
-
-
-
-
-
 
 
 // ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
@@ -69,7 +70,7 @@ function read_json(){
     var key=document.getElementById('www').value
     var total_data=''
     $.ajaxSetup({async:false})
-    $.getJSON("use_json2.json", function(data) {
+    $.getJSON("use_json_20220112.json", function(data) {
         //data 代表读取到的json中的数据
         total_data_pre=data.res;
         // console.log(total_data_pre);
@@ -105,6 +106,9 @@ function read_input(){
     if(day.length==1){
         day='0'+day
     }
+    start_time=document.getElementById('start_time').value
+    end_time=document.getElementById('end_time').value
+    
     max_length=document.getElementById('max_length').value
     min_length=document.getElementById('min_length').value
     console.log(content,year,month,day,max_length,min_length);
@@ -118,58 +122,40 @@ function read_input(){
 function get_result(total_data){
     // 初始化搜索结果
     var search_result=[]
-    content_result=content_search(total_data)
-    date_result=date_search(content_result)
-    search_result=length_search(date_result)
+
+    // 根据输入框内容依次搜索
+
+    // 日期搜索
+    date_result=date_search(total_data)
+
+    // 时间搜索
+    time_result=time_search(date_result)
+
+    // 长度搜索
+    length_result=length_search(time_result)
+
+    // 内容搜索
+    search_result=content_search(length_result)
+
     return search_result
 }
 
 
-// ………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………
-
-// 内容搜索
-function content_search(total_data){
-    if(content==''){
-        return total_data
-    }
-    // 取出每一天内容
-    var content_result=[]
-    for (var ob of total_data){
-        var now_content=ob.content;
-        // console.log(ob);
-        // console.log(now_content);
-        var content_flag=false              // 当天是否被内容搜索命中
-        highlight_content=[]                // 高亮显示内容    
-        // 取出当天每一句话
-        for (var sentence of now_content){
-            if(sentence.includes(content)){
-                content_flag=true;
-                sentence=highlight_sentence(sentence,content)
-                // console.log(sentence);
-            }       
-            highlight_content.push(sentence)
-        }
-        // 如果被内容搜索命中
-        if(content_flag==true){
-            ob.content=highlight_content
-            content_result.push(ob)         // 当天添加到搜索结果  
-        }
-    }
-    // console.log(content_result);
-    return content_result;
-}
 
 // ………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………
 
 // 日期搜索
-function date_search(content_result){
+function date_search(total_data){
     if(year=='' && month=='' && day==''){
-        return content_result
+        return total_data
     }
+   
     var date_result=[]
-    for(var ob of content_result){
+     // 取出每一天日期
+    for(var ob of total_data){
         var now_date=ob.date[0].split('-');
-        console.log(now_date);
+        // console.log(now_date);
+        // 某一个输入框为空则默认全部
         if((year==''||year==now_date[0])&&(month==''||month==now_date[1])&&(day==''||day==now_date[2])){
             date_result.push(ob)
         }
@@ -179,14 +165,54 @@ function date_search(content_result){
 
 // ………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………
 
-// 长度搜索
-function length_search(date_result){
-    if(max_length=='' && min_length==''){
+// 时间搜索
+function time_search(date_result){
+    if(start_time=='' && end_time==''){
         return date_result
     }
-    var length_result=[]
+    
+    var time_result=[]
+    // 某一个输入框为空则默认为0点
+    start_time=Number(start_time)
+    end_time=Number(end_time)
+    // 取出每一天时间
     for(var ob of date_result){
+        var now_time=Number(ob.date[1].split(':')[0])
+        
+        // console.log(now_time);
+
+        // 如果起始时间的数字大于结束时间，即跨天，比如23点——6点
+        if(start_time>end_time){
+            if(now_time>=start_time||now_time<end_time){
+                time_result.push(ob)
+            }
+        }
+        // 如果起始时间的数字小于结束时间，即不跨天，比如12点——23点
+        else{
+            if((now_time>=start_time)&&(now_time<end_time)){
+                time_result.push(ob)
+            }
+        }
+        
+    }
+    return time_result
+}
+
+
+
+// ………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………
+
+// 长度搜索
+function length_search(time_result){
+    if(max_length=='' && min_length==''){
+        return time_result
+    }
+    
+    var length_result=[]
+    // 取出每一天的长度
+    for(var ob of time_result){
         var now_length=ob.length;
+        // 某个输入框为空则默认全部
         if((min_length==''||min_length<=now_length)&&(max_length==''||max_length>=now_length)){
             length_result.push(ob)
         }
@@ -198,12 +224,51 @@ function length_search(date_result){
 
 // ………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………
 
-// 根据内容搜索高亮显示一些词
-function highlight_sentence(sentence,content){
-    var html_str='<font color="red">'+'<b>'+content+'</b>'+'</font>'
-    // console.log(html_str);
-    sentence=sentence.split(content).join(html_str)
-    return sentence
+// 内容搜索
+function content_search(length_result){
+    if(content==''){
+        return length_result
+    }
+   
+    var content_result=[]
+    var conut_num=0;
+     // 取出每一天内容
+    for (var ob of length_result){
+        var now_content=ob.content;
+        var content_flag=false              // 当天是否被内容搜索命中
+        highlight_content=[]                // 高亮显示内容    
+        // 取出当天每一句话
+        for (var sentence of now_content){
+            if(sentence.includes(content)){
+                content_flag=true;
+                [sentence,conut_num]=highlight_sentence(sentence,content,conut_num)
+                // console.log(sentence);
+            }       
+            highlight_content.push(sentence)
+        }
+        // 如果被内容搜索命中
+        if(content_flag==true){
+            ob.content=highlight_content
+            content_result.push(ob)         // 当天添加到搜索结果  
+        }
+    }
+
+    // 显示当前内容的命中次数，如果输入框内容为空则不会显示
+    document.getElementById('count_aim').innerHTML=content;
+    document.getElementById('count_sta').innerHTML=conut_num+'次';
+
+    return content_result;
+}
+
+// ………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………
+
+// 根据内容搜索高亮显示一些词,并统计内容命中的次数
+function highlight_sentence(sentence,content,conut_num){
+    var html_str='<font color="red">'+'<b>'+content+'</b>'+'</font>';
+    var split_lis=sentence.split(content);
+    conut_num+=split_lis.length-1;
+    sentence=split_lis.join(html_str);
+    return [sentence,conut_num]
 }
 
 
@@ -212,10 +277,40 @@ function highlight_sentence(sentence,content){
 
 // 展示搜索结果
 function show_reseult(search_result){
-    total_num=search_result.length
-    show_num(total_num,now_num)
-    show_content(search_result);
-    show_button(search_result);
+    // 如果搜索结果为空，则清空界面的显示
+    if(search_result.length==0){
+        document.getElementById('content_show').innerHTML='没有搜索结果=。='
+        document.getElementById('total_num').innerHTML=0
+        document.getElementById('now_num').innerHTML=0
+        document.getElementById('button_show').innerHTML=''
+
+        document.getElementById('count_aim').innerHTML='';
+        document.getElementById('count_sta').innerHTML='';
+
+        document.getElementById('month_sta_box').innerHTML=''
+        document.getElementById('month_sta').className='';
+        document.getElementById('time_sta_box').innerHTML=''
+        document.getElementById('time_sta').className='';
+
+        // 删除echarts初始化带来的标签，才能进行再一次初始化
+        document.getElementById('month_sta_box').removeAttribute('_echarts_instance_')
+        document.getElementById('time_sta_box').removeAttribute('_echarts_instance_')
+
+    }else{
+        total_num=search_result.length
+        // 展示结果数量
+        show_num(total_num,now_num)
+       
+        // 展示内容
+        show_content(search_result);
+        
+        // 展示搜索结果按钮
+        show_button(search_result);
+        
+        // 展示搜索结果统计
+        show_sta(search_result)
+    }
+
 }
 
 
@@ -236,13 +331,7 @@ function show_content(search_result){
     for (var ob of search_result){
         content_html=content_html+'<div class="each_day">'+'【'+'<b>'+ob.date[0]+'</b>'+'&emsp;'+'<b>'+ob.date[1]+'</b>'+'&emsp;'+'<b>'+ob.length+'</b>'+'】'+'<br>&emsp;&emsp;'+ob.content.join('<br>&emsp;&emsp;')+'<br><br>'+'</div>'
     }
-    if(content_html==''){
-        content_html='没有搜索结果=。='
-        document.getElementById('total_num').innerHTML=0
-        document.getElementById('now_num').innerHTML=0
-        
-        document.getElementById('button_show').innerHTML=''
-    }
+
     // 将html写入
     var content_show=document.getElementById('content_show')
     content_show.innerHTML=content_html
@@ -259,11 +348,11 @@ function show_button(search_result){
     for (var i in search_result){
         ob=search_result[i]
         now_month=ob.date[0].split('-')[1]
+        // 如果前后两个按钮所在月份不一样，则增加换行符
         if(now_month!=pre_month){
             button_html+='<br><br>'
         }
         pre_month=now_month
-
         button_html=button_html+`<button id="button_${i}" class="" now_src="${i}" onclick="tonclick(this)">${ob.date[0]}&emsp;${ob.length}</button>`
 
     }
@@ -297,38 +386,151 @@ function show_sta(search_result){
             count_month[now_month]=1;
         }
     }
-    var keys=Object.keys(count_month);
-    var values=Object.values(count_month);
-    var x_interval=Math.floor(count_month.length/5)
-    var y_interval=Math.floor(Math.max(...values)/3)
-    show_every_month(keys,values,x_interval,y_interval);
+    // 根据月份统计结果计算折线图参数
+    var month_keys=Object.keys(count_month);
+    var month_values=Object.values(count_month);
+    var month_x_interval=Math.floor(month_keys.length/5)
+    // console.log(count_month,count_month.length,month_x_interval)
+    var month_y_interval=Math.floor(Math.max(...month_values)/3)
+    // 绘制月份折线图
+    show_every_month(month_keys,month_values,month_x_interval,month_y_interval);
+    // 显示月份统计折线图
+    document.getElementById('month_sta').className='active';
+    document.getElementById('month_sta_box').className='show_image';
+
+
     // 展示时间统计
+    var count_time={};
+    for(var i=0;i<=23;i++){
+        count_time[i]=0
+    }
+    for(var ob of search_result){
+        var now_time=ob.date[1].split(':')[0]
+        if(count_time.hasOwnProperty(now_time)){
+            count_time[now_time]+=1;
+        }else{
+            count_time[now_time]=1;
+        }
+    }
+    // 根据时间统计结果计算折线图参数
+    var time_keys=Object.keys(count_time);
+    var time_values=Object.values(count_time);
+    var time_y_interval=Math.floor(Math.max(...time_values)/3)
+    // 绘制时间折线图
+    show_every_hour(time_keys,time_values,1,time_y_interval);
+    // 隐藏时间统计折线图
+    document.getElementById('time_sta').className='';
+    document.getElementById('time_sta_box').className='hide_image';
+
 }
 
 // ………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………
 
+// 画出月份统计折线图
+function show_every_month(keys,values,x_interval,y_interval){
+    console.log(keys,x_interval)
+    var oMyChart = echarts.init(document.getElementById("month_sta_box"));
+    var option = {
+                grid:{
+                    y:'20%',
+                    width:'95%',
+                    height:'50%',
+                },
+                tooltip : {
+                    trigger: 'axis',
+                    show:true,
+                },
+                legend: {
+                    data:['每个月记录次数']
+                },
 
+                calculable : true,
+
+                xAxis : [
+                    {
+                        axisLabel:{
+                            rotate: 30,
+                            interval:x_interval,
+                            margin:20,
+                        },
+                        axisLine:{
+                            lineStyle :{
+                            color:'black'
+                            }
+                        },
+                        type : 'category',
+                        boundaryGap : ['0.2','0.2'],    
+                        name:'月份',
+                        data:keys,
+                        
+                    }
+                ],
+                yAxis : [
+                    {
+                        type : 'value',
+                        interval:y_interval,
+                        name:'次数',
+                        axisLine:{
+                            // show:true,
+                            lineStyle :{
+                                // color: '#CECECE'
+                                color:'black'
+                            }
+                        },
+                    }
+                ],
+                series : [
+                    {
+                        name:'每个月记录次数',
+                        type:'line',
+                        symbol:'circle',
+                        symbolSize:8,
+                        smooth: 0.1,
+                        color:['#66AEDE'],
+                        data:values
+                    },
+                ],
+
+                };
+    oMyChart.setOption(option);
+    // console.log(values)
+}
 // ………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………
 
-// 画出月份统计图
-function show_every_month(keys,values,x_interval,y_interval){
-    var oMyChart = echarts.init(document.getElementById("sta_box"));
+// 画出时间统计图
+function show_every_hour(keys,values,x_interval,y_interval){
+    // 统计非零的坐标
+    function createdPointList(data, xdata) {
+        data = data || []
+        xdata = xdata || []
+        var res = []
+        data.forEach((itm,idx) => {
+            // 未提交的坐标提取
+            if (itm != 0) {
+                res.push({
+                    coord: [xdata[idx], itm]
+                })
+            }
+        })
+        return res
+    }
+    var markPointList = createdPointList(values, keys)
+
+    var oMyChart = echarts.init(document.getElementById("time_sta_box"));
     var option = {
                 // 定义样式和数据
                 // backgroundColor: '#FBFBFB',
                 grid:{
                     y:'20%',
-                    width:'95%',
+                    width:'80%',
                     height:'50%',
-                    // left:'12%',
-                    // right:'1%',
-
                 },
                 tooltip : {
-                    trigger: 'axis'
+                    trigger: 'axis',
+                    // show:true,
                 },
                 legend: {
-                    data:['每个月出现次数']
+                    data:['每个小时记录次数']
                 },
 
                 calculable : true,
@@ -337,7 +539,7 @@ function show_every_month(keys,values,x_interval,y_interval){
                 xAxis : [
                     {
                         axisLabel:{
-                            rotate: 40,
+                            // rotate: 40,
                             interval:x_interval,
                         },
                         axisLine:{
@@ -347,14 +549,7 @@ function show_every_month(keys,values,x_interval,y_interval){
                         },
                         type : 'category',
                         boundaryGap : ['0.2','0.2'],
-                        name:'月份',
-                        // data : function (){
-                        //     var list = [];
-                        //     for (var i = 1; i <= 12; i++) {
-                        //         list.push(i)
-                        //     }
-                        //     return list;
-                        // }(),
+                        name:'时间',
                         data:keys,
                     }
                 ],
@@ -370,25 +565,35 @@ function show_every_month(keys,values,x_interval,y_interval){
                                 color:'black'
                             }
                         },
-                        // axisTick:{
-                        //     show:true,
-                        // }
                     }
                 ],
                 series : [
                     {
-                        name:'每个月出现次数',
+                        name:'每个小时记录次数',
                         type:'line',
                         symbol:'none',
+                        // symbol:'circle',
+                        // symbolSize:5,
                         smooth: 0.1,
                         color:['#66AEDE'],
-                        data:values
+                        data:values,
+                        // 单独标记特定的坐标
+                        markPoint:{
+                            symbol:'circle',
+                            symbolSize:8,
+                            // data:[{coord:[5,0]}]，
+                            data:markPointList,
+                        },
+
+                        // showSymbol:false,
                     },
+                
                 ],
 
                 };
     oMyChart.setOption(option);
 }
+
 
 
 
@@ -435,6 +640,22 @@ function active_button(now_num,pre_num){
     pre_num_button.className=''
     now_num_button=document.getElementById('button_'+now_num)
     now_num_button.className='active'
+}
+
+// 切换月份统计
+function change_to_month_sta(){
+    document.getElementById('month_sta_box').className='show_image';
+    document.getElementById('time_sta_box').className='hide_image';
+    document.getElementById('month_sta').className='active';
+    document.getElementById('time_sta').className='';
+}
+
+// 切换时间统计
+function change_to_time_sta(){
+    document.getElementById('time_sta_box').className='show_image';
+    document.getElementById('month_sta_box').className='hide_image';
+    document.getElementById('time_sta').className='active';
+    document.getElementById('month_sta').className='';
 }
 
 // ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————

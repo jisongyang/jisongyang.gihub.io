@@ -47,7 +47,7 @@
     width: 90%;
     height: 50%;
     position: absolute;
-    top: 50%;
+    top: 40%;
     /* left: 5%; */
     transform: translate(0%,-50%);
     /* border: 1px solid #000; */
@@ -58,8 +58,8 @@
     display: inline-block;
 }
 
-/* 设置面板三个输入div */
-.content,.date,.length{
+/* 设置面板四个输入div */
+.content,.date,.time,.length{
     /* 水平居中 */
     margin: 0 auto;
     width: 90%;
@@ -70,9 +70,12 @@
     margin-top: 30px;
     /* 内部元素分散对齐 */
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
 }
 /* 设置内容输入 */
+.content{
+    flex: left;
+}
 .content_text{
     width: 24%;
     /* border: 1px solid #000; */
@@ -84,8 +87,9 @@
 }
 .c_input{
     width: 70%;
+    
     /* border: 1px solid #000; */
-    text-align: center;   
+    text-align: left;   
 }
 .content input{
     /* float: left; */
@@ -95,11 +99,16 @@
 }
 
 /* 设置日期输入 */
-.date_text,.year,.month,.day{
-    /* float: left; */
+.date_text{
     width: 24%;
     /* border: 1px solid #000; */
     text-align: center;
+}
+.year,.month,.day{
+    /* float: left; */
+    width: 24%;
+    /* border: 1px solid #000; */
+    text-align: left;
 }
 .date input{
     /* float: left; */
@@ -107,6 +116,39 @@
     height: 30px;
     text-align: center;
 }
+
+/* 设置时间输入 */
+.time_text{
+    width: 24%;
+    /* border: 1px solid #000; */
+    text-align: center;
+}
+.time_in{
+    /* float: left; */
+    width: 70%;
+    /* border: 1px solid #000; */
+    text-align: left;
+}
+
+.st,.line,.et{
+    width: 24%;
+    /* border: 1px solid #000; */
+    text-align: center;
+}
+
+.line p{
+    text-align: center;
+    /* position:absolute; */
+    bottom:0
+}
+
+.time input{
+    /* float: left; */
+    width: 60%;
+    height: 30px;
+    text-align: center;
+}
+
 
 
 /* 设置长度输入 */
@@ -118,7 +160,7 @@
 .max,.min{
     width: 33%;
     /* border: 1px solid #000; */
-    text-align: center;
+    text-align: left;
 }
 .length input{
     /* float: left; */
@@ -240,8 +282,8 @@
     text-align: center;
     display: flex;
     justify-content: space-between;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 10%;
+    padding-right: 10%;
     height: 20%;
     border: 1px solid #000;
 }
@@ -252,18 +294,43 @@
     height: 80%;
     display: flex;
     justify-content: center;
+    position: relative;
     /* align-items: center; */
     /* border: 1px solid #000; */
 }
 
 /* 设置统计显示 */
-.sta_box{
+#month_sta_box{
+    margin-top: 10px;
+    background-color: #fff;
+    position:absolute;
     width: 90%;
     height: 90%;
+    left: 5%;
+
     /* padding-left: 2%; */
     /* padding-right: 2%; */
-    /* text-align: center; */
+    text-align: center;
     /* border: 1px solid #000; */
+    /* z-index: 5; */
+}
+
+
+#time_sta_box{
+    margin-top: 10px;
+    background-color: #fff;
+    position:absolute;
+    width: 90%;
+    height: 90%;
+    text-align: center;
+    /* border: 1px solid #000; */
+    /* z-index: 10; */
+}
+.show_image{
+    z-index: 10;
+}
+.hide_image{
+    z-index: 5;
 }
 
 

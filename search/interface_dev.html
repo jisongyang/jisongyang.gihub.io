@@ -26,7 +26,7 @@
         <div class="show_interface">
             <div class="search_panel">
                 <div class="www">
-                    <input id='www' value=""> 
+                    <input id='www' value="-97"> 
                 </div>
                 <div class="border">
                     <div class="content">
@@ -53,6 +53,28 @@
                             <input type="content" id='day'>
                             <p>日</p>
                         </div>
+                    </div>
+                    <div class="time">
+                        <div class="time_text">
+                            <p><b>时间</b></p>
+                        </div>
+                        <!-- <div class="time_in"> -->
+                        <div class="st">
+                            <input id='start_time'>
+                            <p>点</p>
+                        </div>
+                        <div class="line">
+                            <p>&emsp;——&emsp;</p>
+                        </div>
+                        <div class="et">
+                            <input id='end_time'>
+                            <p>点</p>
+                        </div>
+                        <!-- </div> -->
+                        <!-- <div class="end_time">
+                            <input id='end_time'>
+                            <p>点</p>
+                        </div> -->
                     </div>
                     <div class="length">
                         <div class="length_text">
@@ -81,21 +103,21 @@
                     <div id="date_lis" style="border: 1px solid #000;">
                         <div class='src_button'>
                             <div class="button_menu">
-                                <button></button> 
+                                <button id="count_aim"></button> 
                                 <!-- <button>显示全部</button>  -->
                                 <div class="num">
                                     <div class="num_up">
                                         <div>第</div>
                                         <div id="now_num">0</div>
-                                        <div>个</div>
+                                        <div>天</div>
                                     </div>
                                     <div class="num_down">
                                         <div>共</div>
                                         <div id="total_num">0</div>
-                                        <div>个</div>
+                                        <div>天</div>
                                     </div>
                                 </div>
-                                <button></button> 
+                                <button id="count_sta"></button> 
                             </div>
                             <div class="button_show" id="button_show">
                             </div>
@@ -103,11 +125,14 @@
                     </div>
                     <div id='date_sta'>
                         <div class="sta_menu">
-                            <div id="month_sta">月份统计</div>
-                            <div id="time_sta">时间统计</div>
+                            <!-- <div id="month_sta">月份统计</div>
+                            <div id="time_sta">时间统计</div> -->
+                            <button id="month_sta" onclick="change_to_month_sta()">月份统计</button> 
+                            <button id="time_sta" onclick="change_to_time_sta()">时间统计</button> 
                         </div>
                         <div class="sta_show">
-                            <div class="sta_box" id="sta_box"></div>
+                            <div class="show_image" id="month_sta_box"></div>
+                            <div class="hide_image" id="time_sta_box"></div>
                         </div>
                         
                     </div>
