@@ -529,6 +529,7 @@ function show_every_hour(keys,values,x_interval,y_interval){
                 // backgroundColor: '#FBFBFB',
                 grid:{
                     y:'20%',
+                    x:'15%',
                     width:'70%',
                     height:'50%',
                     // x:'40px',
