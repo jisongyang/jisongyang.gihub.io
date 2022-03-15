@@ -23,8 +23,6 @@
         /* 在父元素的范围内居左 */
         float: left;
         /* 设置占父元素的长宽比，前提是父元素已经设置了长宽 */
-        /* max-width: 350px; */
-        /* min-width: 300px; */
         width: 25%;
         height: 99%;
         position: relative;
@@ -43,21 +41,12 @@
     }
 }
 
-
 @media screen and (max-width:800px) {
 
     /* 设置整个界面 */
     .show_interface{
-        /* position: absolute; */
-        /* 让左上角距离顶端偏移 */
-        /* top: 50%; */
-        /* 让左上角距离左侧偏移 */
-        /* left: 50%; */
-        /* 左移和上移自身的50% */
-        /* transform: translate(-50%,-50%); */
-        /* 圆角 */
-        /* border-radius: 5px; */
         width: 90%;
+        /* 设置手机端高端，超出手机一屏则可以下滑 */
         height: 1300px;
         overflow: hidden;
         /* display: inline-flex; */
@@ -65,23 +54,14 @@
 
     /* 设置搜索面板 */
     .search_panel{
-        /* 在父元素的范围内居左 */
-        /* float: top; */
-        /* 设置占父元素的长宽比，前提是父元素已经设置了长宽 */
-        /* max-width: 350px; */
-        /* min-width: 300px; */
         width: 99%;
         height: 280px;
-        /* position: relative; */
-        /* display: flex; */
         justify-content: center;
         border: 1px solid #000;
     } 
 
     /* 设置结果面板 */
     .result_panel{
-        /* 在父元素的范围内居右 */
-        /* float:bottom; */
         width: 99%;
         height: 800px;
         /* border: 1px solid #000; */
@@ -89,6 +69,8 @@
 
 }
 
+
+/* _____________________________________________________________________ */
 .www{
     width: 100%;
     /* border: 1px solid #000; */
@@ -99,6 +81,9 @@
     width:90%;
     text-align: center;
 }
+
+
+/* _____________________________________________________________________ */
 
 /* 配置搜索面板布局 */
 @media screen and (min-width:800px) {
@@ -148,12 +133,8 @@
 
     .border{
         width: 90%;
-        /* height: 50%; */
         position: absolute;
         top: 5%;
-        /* left: 5%; */
-        /* transform: translate(0%,-50%); */
-        /* border: 1px solid #000; */
     }
     
     /* 设置面板四个输入div */
@@ -164,17 +145,14 @@
         height: 40px;
         /* border: 1px solid #000; */
         position: relative;
-
-        /* margin-top: 0px; */
-        /* 内部元素分散对齐 */
         display: flex;
         /* justify-content: space-between; */
-        top:-20px;
+        /* top:-20px; */
     }
 
-    .content{
+    /* .content{
         top:0px
-    }
+    } */
 
     
     /* 设置查询清空按钮 */
@@ -182,7 +160,6 @@
         display: flex;
         justify-content: space-between;
         margin: 10px;
-        /* margin-top: 30px; */
     }
     .action button{
         margin: auto;
@@ -193,6 +170,8 @@
 }
 
 
+
+/* _____________________________________________________________________ */
 
 /* 设置 p和input放在一行 */
 .border p,input{
@@ -299,19 +278,9 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
 /* _____________________________________________________________________ */
 
-
+/* 配置结果面板布局 */
 
 @media screen and (min-width:800px) {
 
@@ -375,14 +344,11 @@
         border: 1px solid #000;
         
     }
-    
-
-
 }
 
 
 
-
+/* _____________________________________________________________________ */
 
 .src_button{
     width: 100%;
@@ -400,22 +366,19 @@
 
 /* 设置按钮占整个父元素的长宽比 */
 .button_menu button{
-    width: 15%;
+    width: 30%;
     height: 80%;
     margin: 5px;
 }
+
+/* 设置数字展示 */
 .num{
-    width: 25%;
+    position: relative;
+    width: 15%;
     height: 100%;
     /* border: 1px solid #000; */
     align-items:center;
     justify-content: space-between;
-    /* display: flex; */
-    /* justify-content:center;
-    /* display:-webkit-flex; */ 
-    /* transform: translate(0,25%); */
-    /* text-align: center; */
-    /* margin: 5px; */
 }
 
 .num_up,.num_down{
@@ -432,7 +395,7 @@
 
 
 .button_show button{
-    width: 130px;
+    width: 135px;
     text-align: left;
     /* margin-right: 5px; */
 }
@@ -521,9 +484,9 @@
 }
 
 /* 设置文本 */
-p{
+/* p{
     columns: #4a4a4a;
     margin-top: 30px;
     margin-bottom: 6px;
     font-stretch: 15px;
-}
+} */
