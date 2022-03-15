@@ -70,6 +70,7 @@ function read_json(){
     var key=document.getElementById('www').value
     var total_data=''
     $.ajaxSetup({async:false})
+    // $.getJSON("use_json2.json", function(data) {
     $.getJSON("use_json_20220112.json", function(data) {
         //data 代表读取到的json中的数据
         total_data_pre=data.res;
