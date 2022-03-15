@@ -57,7 +57,7 @@
         /* 圆角 */
         /* border-radius: 5px; */
         width: 90%;
-        height: 1300px;
+        height: 1600px;
         overflow: hidden;
         /* display: inline-flex; */
     }
@@ -65,7 +65,7 @@
     /* 设置搜索面板 */
     .search_panel{
         /* 在父元素的范围内居左 */
-        float: top;
+        /* float: top; */
         /* 设置占父元素的长宽比，前提是父元素已经设置了长宽 */
         /* max-width: 350px; */
         /* min-width: 300px; */
@@ -74,16 +74,16 @@
         position: relative;
         display: flex;
         justify-content: center;
-        border: 1px solid #000;
+        /* border: 1px solid #000; */
     } 
 
     /* 设置结果面板 */
     .result_panel{
         /* 在父元素的范围内居右 */
-        float:bottom;
+        /* float:bottom; */
         width: 99%;
         height: 800px;
-        border: 1px solid #000;
+        /* border: 1px solid #000; */
     }
 
 }
@@ -245,9 +245,9 @@
 
     .border{
         width: 90%;
-        height: 50%;
+        /* height: 50%; */
         position: absolute;
-        top: 35%;
+        /* top: 35%; */
         /* left: 5%; */
         transform: translate(0%,-50%);
         /* border: 1px solid #000; */
