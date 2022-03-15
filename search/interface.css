@@ -52,7 +52,7 @@
         /* max-width: 350px; */
         /* min-width: 300px; */
         width: 99%;
-        height: 30%;
+        height: 400px;
         position: relative;
         display: flex;
         justify-content: center;
@@ -64,7 +64,7 @@
         /* 在父元素的范围内居右 */
         float:bottom;
         width: 99%;
-        height: 68%;
+        height: 800px;
         border: 1px solid #000;
     }
 
@@ -232,7 +232,7 @@
         top: 35%;
         /* left: 5%; */
         transform: translate(0%,-50%);
-        border: 1px solid #000;
+        /* border: 1px solid #000; */
     }
     
     /* 设置面板四个输入div */
