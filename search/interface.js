@@ -228,6 +228,8 @@ function length_search(time_result){
 // 内容搜索
 function content_search(length_result){
     if(content==''){
+        document.getElementById('count_aim').innerHTML='';
+        document.getElementById('count_sta').innerHTML='';
         return length_result
     }
    
