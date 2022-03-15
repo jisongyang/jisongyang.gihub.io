@@ -47,13 +47,13 @@
 
     /* 设置整个界面 */
     .show_interface{
-        position: absolute;
+        /* position: absolute; */
         /* 让左上角距离顶端偏移 */
-        top: 50%;
+        /* top: 50%; */
         /* 让左上角距离左侧偏移 */
-        left: 50%;
+        /* left: 50%; */
         /* 左移和上移自身的50% */
-        transform: translate(-50%,-50%);
+        /* transform: translate(-50%,-50%); */
         /* 圆角 */
         /* border-radius: 5px; */
         width: 90%;
