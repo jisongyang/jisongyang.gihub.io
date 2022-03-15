@@ -47,13 +47,13 @@
 
     /* 设置整个界面 */
     .show_interface{
-        /* position: absolute; */
+        position: absolute;
         /* 让左上角距离顶端偏移 */
-        /* top: 50%; */
+        top: 50%;
         /* 让左上角距离左侧偏移 */
-        /* left: 50%; */
+        left: 50%;
         /* 左移和上移自身的50% */
-        /* transform: translate(-50%,-50%); */
+        transform: translate(-50%,-50%);
         /* 圆角 */
         /* border-radius: 5px; */
         width: 90%;
@@ -99,35 +99,72 @@
     text-align: center;
 }
 
-.border{
-    width: 90%;
-    height: 50%;
-    position: absolute;
-    top: 40%;
-    /* left: 5%; */
-    transform: translate(0%,-50%);
-    /* border: 1px solid #000; */
+@media screen and (min-width:800px) {
+    .border{
+        width: 90%;
+        height: 50%;
+        position: absolute;
+        top: 40%;
+        /* left: 5%; */
+        transform: translate(0%,-50%);
+        /* border: 1px solid #000; */
+    }
+
+
+
+    /* 设置面板四个输入div */
+    .content,.date,.time,.length{
+        /* 水平居中 */
+        margin: 0 auto;
+        width: 90%;
+        height: auto;
+        /* border: 1px solid #000; */
+        position: relative;
+
+        margin-top: 30px;
+        /* 内部元素分散对齐 */
+        display: flex;
+        /* justify-content: space-between; */
+    }
 }
+
+
+@media screen and (max-width:800px){
+
+    .border{
+        width: 90%;
+        height: 50%;
+        position: absolute;
+        top: 30%;
+        /* left: 5%; */
+        transform: translate(0%,-50%);
+        /* border: 1px solid #000; */
+    }
+    
+    /* 设置面板四个输入div */
+    .content,.date,.time,.length{
+        /* 水平居中 */
+        margin: 0 auto;
+        width: 90%;
+        height: auto;
+        /* border: 1px solid #000; */
+        position: relative;
+
+        margin-top: 5px;
+        /* 内部元素分散对齐 */
+        display: flex;
+        /* justify-content: space-between; */
+    }
+}
+
+
 
 /* 设置 p和input放在一行 */
 .border p,input{
     display: inline-block;
 }
 
-/* 设置面板四个输入div */
-.content,.date,.time,.length{
-    /* 水平居中 */
-    margin: 0 auto;
-    width: 90%;
-    height: auto;
-    /* border: 1px solid #000; */
-    position: relative;
 
-    margin-top: 30px;
-    /* 内部元素分散对齐 */
-    display: flex;
-    /* justify-content: space-between; */
-}
 /* 设置内容输入 */
 .content{
     flex: left;
@@ -241,33 +278,6 @@
 }
 
 
-@media screen and (max-width:800px){
-
-    .border{
-        width: 90%;
-        height: 50%;
-        position: absolute;
-        top: 30%;
-        /* left: 5%; */
-        transform: translate(0%,-50%);
-        /* border: 1px solid #000; */
-    }
-    
-    /* 设置面板四个输入div */
-    .content,.date,.time,.length{
-        /* 水平居中 */
-        margin: 0 auto;
-        width: 90%;
-        height: auto;
-        /* border: 1px solid #000; */
-        position: relative;
-
-        margin-top: 5px;
-        /* 内部元素分散对齐 */
-        display: flex;
-        /* justify-content: space-between; */
-    }
-}
 
 
 
