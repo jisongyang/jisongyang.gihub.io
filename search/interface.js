@@ -434,8 +434,10 @@ function show_every_month(keys,values,x_interval,y_interval){
     var option = {
                 grid:{
                     y:'20%',
-                    width:'95%',
+                    x:'15%',
+                    width:'70%',
                     height:'50%',
+                    // left:'20px',
                 },
                 tooltip : {
                     trigger: 'axis',
@@ -453,6 +455,7 @@ function show_every_month(keys,values,x_interval,y_interval){
                             rotate: 30,
                             interval:x_interval,
                             margin:20,
+                            // padding:[0,0,0,30],
                         },
                         axisLine:{
                             lineStyle :{
@@ -463,6 +466,9 @@ function show_every_month(keys,values,x_interval,y_interval){
                         boundaryGap : ['0.2','0.2'],    
                         name:'月份',
                         data:keys,
+                        // nameTextStyle:{
+                        //     padding:[0,0,0,30]
+                        // }
                         
                     }
                 ],
@@ -523,8 +529,10 @@ function show_every_hour(keys,values,x_interval,y_interval){
                 // backgroundColor: '#FBFBFB',
                 grid:{
                     y:'20%',
-                    width:'80%',
+                    width:'70%',
                     height:'50%',
+                    // x:'40px',
+                    // x2:'40px',
                 },
                 tooltip : {
                     trigger: 'axis',

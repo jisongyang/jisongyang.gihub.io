@@ -326,7 +326,6 @@
         
     }
 
-
     /* 设置结果面板上半部分的上下两部分 */
     #date_lis,#date_sta{
         /* display: inline-block; */
@@ -374,9 +373,9 @@
 /* 设置数字展示 */
 .num{
     position: relative;
-    width: 15%;
+    width: 20%;
     height: 100%;
-    /* border: 1px solid #000; */
+    border: 1px solid #000;
     align-items:center;
     justify-content: space-between;
 }
@@ -384,7 +383,7 @@
 .num_up,.num_down{
     display: flex;
     width: 100%;
-    max-width: 80px;
+    /* max-width: 80px; */
     height: 50%;
     justify-content: space-between;
     /* border: 1px solid #000; */
@@ -463,6 +462,7 @@
     /* border: 1px solid #000; */
     /* z-index: 10; */
 }
+
 .show_image{
     z-index: 10;
 }
