@@ -49,15 +49,15 @@
     .show_interface{
         position: absolute;
         /* 让左上角距离顶端偏移 */
-        top: 50%;
+        /* top: 50%; */
         /* 让左上角距离左侧偏移 */
-        left: 50%;
+        /* left: 50%; */
         /* 左移和上移自身的50% */
-        transform: translate(-50%,-50%);
+        /* transform: translate(-50%,-50%); */
         /* 圆角 */
         /* border-radius: 5px; */
         width: 90%;
-        height: 1600px;
+        height: 1300px;
         overflow: hidden;
         /* display: inline-flex; */
     }
@@ -245,9 +245,9 @@
 
     .border{
         width: 90%;
-        /* height: 50%; */
+        height: 50%;
         position: absolute;
-        /* top: 35%; */
+        top: 35%;
         /* left: 5%; */
         transform: translate(0%,-50%);
         /* border: 1px solid #000; */
