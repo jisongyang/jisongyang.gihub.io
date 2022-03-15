@@ -58,7 +58,7 @@
         /* 圆角 */
         /* border-radius: 5px; */
         width: 90%;
-        height: 1600px;
+        height: 1300px;
         overflow: hidden;
         /* display: inline-flex; */
     }
@@ -371,7 +371,7 @@
     .result_down{
         display:flex;
         flex-direction: row;
-        height: 700px;
+        height: 500px;
         border: 1px solid #000;
         
     }
