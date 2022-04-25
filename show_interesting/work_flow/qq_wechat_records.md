@@ -1,3 +1,17 @@
+<div id="navifation" class='headbar'>
+    <iframe id='head' align="center" width="100%" height="160" src="python_show.html"  frameborder="no" border="0" marginwidth="0" marginheight="px" scrolling="no" ></iframe>
+</div>
+<style>
+    .headbar{text-align:center}
+    .iframe{margin:0 auto;}
+</style>
+<script>
+    var oDiv = document.getElementById('head');
+    oDiv.style.position = 'fixed'; oDiv.style.top = '0px'; oDiv.style.left = '0px';
+    document.title="导出QQ聊天记录和微信聊天记录";
+</script>
+<br><br>
+
 # 导出QQ聊天记录和微信聊天记录
 
 <font color=red>【ps：本方法只提取文本消息，不含图片、视频、表情、连接】</font>
@@ -25,24 +39,24 @@
 
 ### 1.环境
 
-&emsp; &emsp; 华为手机 + 鸿蒙2.0.0 + Windows
+- 华为手机 + 鸿蒙2.0.0 + Windows
 
-&emsp; &emsp; 需要 Python 和 sqlcipher
+- 需要 Python 和 sqlcipher
 
 ### 2.总体流程
 
 
-&emsp; &emsp; QQ微信聊天记录可以直接从手机备份到电脑，但是备份出来的文件无法查看内容。
+- QQ微信聊天记录可以直接从手机备份到电脑，但是备份出来的文件无法查看内容。
 
-&emsp; &emsp; 同时，手机中的聊天记录保存的文件一般情况下是无法找到的。如果不root手机的话，可以使用【备份整个APP】的方法可以帮助导出聊天记录保存文件。
+- 同时，手机中的聊天记录保存的文件一般情况下是无法找到的。如果不root手机的话，可以使用【备份整个APP】的方法可以帮助导出聊天记录保存文件。
 
-&emsp; &emsp; 但是由于现在华为自带的备份软件的备份APP时候需要加密，导出也无法查看，所以借用了安卓虚拟系统VMOS来备份整个APP。
+- 但是由于现在华为自带的备份软件的备份APP时候需要加密，导出也无法查看，所以借用了安卓虚拟系统VMOS来备份整个APP。
 
-&emsp; &emsp; VMOS可以理解为，在手机中单独分一块空间出来当成一个虚拟新手机，这个新手机自带有一个备份功能，备份时候无需加密。
+- VMOS可以理解为，在手机中单独分一块空间出来当成一个虚拟新手机，这个新手机自带有一个备份功能，备份时候无需加密。
 
-&emsp; &emsp; 安装好VMOS后，需要在VMOS中再安装QQ或微信，但是这个虚拟新手机中的QQ或微信没有任何聊天记录。
+- 安装好VMOS后，需要在VMOS中再安装QQ或微信，但是这个虚拟新手机中的QQ或微信没有任何聊天记录。
 
-&emsp; &emsp; 因此，需要事先将手机中的聊天记录备份到电脑，再从电脑恢复到虚拟新手机中，此时再在虚拟新手机中【备份整个APP】就行了
+- 因此，需要事先将手机中的聊天记录备份到电脑，再从电脑恢复到虚拟新手机中，此时再在虚拟新手机中【备份整个APP】就行了
 
 ```mermaid
     graph LR;
