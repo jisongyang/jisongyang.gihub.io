@@ -2,7 +2,7 @@
     <iframe id='head' align="center" width="100%" height="160" src=""  frameborder="no" border="0" marginwidth="0" marginheight="px" scrolling="no" ></iframe>
 </div>
 <style>
-    .headbar{text-align:center}
+    .headbar{text-align:center;background-color:white}
     .iframe{margin:0 auto;}
 </style>
 <script>
