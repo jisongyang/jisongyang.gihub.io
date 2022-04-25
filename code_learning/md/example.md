@@ -168,3 +168,13 @@ $(document).ready(function () {
 <font color=Blue>我是蓝色</font>
 <font size=5>我是尺寸</font>
 <font face="黑体" color=green size=5>我是黑体，绿色，尺寸为5</font>
+
+
+```mermaid
+graph LR;
+    A(开始)-->B(手机安装VMOS)
+    B-->C(安装32位QQ或微信)
+    C-->D("备份恢复聊天记录(特别耗时)")
+    D-->E["[特别耗时]"]
+```
+如果文本里有括号，则需要整体加上引号，比如上面的"备份恢复聊天记录(特别耗时)"

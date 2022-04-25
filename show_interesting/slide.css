@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: consolas;
+}
+body{
+    /* display:flex; */
+    display: block;
+    justify-content:center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+
+
+div{
+    position: absolute;
+    /* 让左上角距离顶端偏移 */
+    top: 50%;
+    /* 让左上角距离左侧偏移 */
+    left: 50%;
+    /* 左移和上移自身的50% */
+    transform: translate(-50%,-50%);
+    /* 圆角 */
+    /* border-radius: 5px; */
+    width: 70%;
+    height: 80%;
+    overflow: hidden;
+    /* display: inline-flex; */
+    /* border: 1px solid #000; */
+}
+div a{
+    position: relative;
+    /* margin: 0 20px; */
+
+    font-size: 2em;
+    color: #000000;
+    text-decoration: none;
+    display: block;
+}
+div #marker{
+    position: absolute;
+    left: 0;
+    height: 4px;
+    width: 0;
+    background: #000000;
+    bottom: -8px;
+    transition: 0.5s;
+    border-radius: 4px;
+}
+
+div a:hover{
+    text-decoration: underline;
+}
