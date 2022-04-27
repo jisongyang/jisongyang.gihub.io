@@ -1,5 +1,3 @@
-<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
-
 <div id="navifation" class='headbar'>
     <iframe id='head' align="center" width="100%" height="160" src=""  frameborder="no" border="0" marginwidth="0" marginheight="px" scrolling="no" ></iframe>
 </div>
