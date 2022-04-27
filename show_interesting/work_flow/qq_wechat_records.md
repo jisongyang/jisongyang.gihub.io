@@ -1,3 +1,5 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
+
 <div id="navifation" class='headbar'>
     <iframe id='head' align="center" width="100%" height="160" src=""  frameborder="no" border="0" marginwidth="0" marginheight="px" scrolling="no" ></iframe>
 </div>
@@ -41,7 +43,7 @@
 
 - 华为手机 + 鸿蒙2.0.0 + Windows
 
-- 需要 Python 和 sqlcipher
+- 解析聊天记录文本需要 Python 和 sqlcipher
 
 ### 2.总体流程
 
@@ -65,7 +67,7 @@
 
 ##### 第一步：安装VMOS
 
-- VMOS官网：<http://www.vmos.cn/>
+- VMOS官网：<http://www.vmos.cn/>，下载到手机上，安装
   
 - 【不使用VMOS Pro是因为它没有备份APP的功能】
 
