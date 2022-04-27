@@ -9,6 +9,7 @@
     var oDiv = document.getElementById('head');
     oDiv.style.position = 'fixed'; oDiv.style.top = '0px'; oDiv.style.left = '0px';
     document.title="导出QQ聊天记录和微信聊天记录";
+    document.querySelector("body > div > h1 > a").innerHTML=''
 </script>
 <br><br>
 
