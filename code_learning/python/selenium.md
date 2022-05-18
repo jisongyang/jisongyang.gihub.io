@@ -11,6 +11,7 @@
     document.title="python/selenium";
     document.getElementById('navifation').style.zIndex=9999;
     document.getElementById('navifation').style.position='absolute';
+    document.querySelector("#selenium").style.zIndex=1;
 
 </script>
 <br><br>
