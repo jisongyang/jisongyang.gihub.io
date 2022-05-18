@@ -1,5 +1,5 @@
 <div id="navifation" class='headbar'>
-    <iframe id='head' align="center" width="100%" height="160" src="python_show.html"  frameborder="no" border="0" marginwidth="0" marginheight="px" scrolling="no" ></iframe>
+    <iframe id='head' align="center" width="100%" height="160" src="python_index.html"  frameborder="no" border="0" marginwidth="0" marginheight="px" scrolling="no" ></iframe>
 </div>
 <style>
     .headbar{text-align:center}
@@ -37,3 +37,29 @@
     >   | following-sibling::uni-view[2]  | 之后的第二个标签 |
     >   | following-sibling:: *  | 同级的所有标签 |
     >   | following-sibling:: *[1] | 同级的第一个标签 |
+
+* 获取cookies以及加载cookies
+    ```python
+
+    def get_data(search_content,log_url,save_cookies=False):
+        options=webdriver.ChromeOptions()
+        driver=webdriver.Chrome(chrome_options=options)
+        driver.get(log_url)
+        www=input('请输入任意键继续\n')         # 第一次的时候扫码登录，或者账号登录，然后继续
+        if(save_cookies):
+            cookies=driver.get_cookies()
+            with open('cookies.txt','w') as f:
+                for i in cookies:
+                    f.write(str(i))
+                    f.write('\n')
+        else:
+            cookies=[]
+            with open('cookies.txt','r') as f:
+                for i in f.readlines():
+                    cookies.append(eval(i.strip()))
+            for i in cookies:
+                driver.add_cookie(i)
+
+            time.sleep(3)
+            driver.refresh()
+    ```
