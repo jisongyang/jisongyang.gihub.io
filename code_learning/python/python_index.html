@@ -262,9 +262,15 @@
         },function(){
             $('.subbox').css({'display':'none'});
         },function(){
-            window.parent.document.getElementById("navifation").style.height='500';
-            window.parent.document.getElementById("navifation").style.top='300px';
+            $(window.parent.document).find("#head").style.height='500';
+            $(window.parent.document).find("#head").style.top='300px';
             $(window.parent.document).find("#head").height(500);
+            $(window.parent.document).find("#head").css({'height':'400px'});
+            $(window.parent.document).find("#head").css({'top':'200px'});
+
+            $(window.parent.document).find("#navifation").css({'height':'400px'});
+            $(window.parent.document).find("#navifation").css({'top':'200px'});
+
         });
 
 
