@@ -9,7 +9,7 @@
     var oDiv = document.getElementById('head');
     oDiv.style.position = 'fixed'; oDiv.style.top = '0px'; oDiv.style.left = '0px'; oDiv.style.backgroundColor = 'rgba(255,255,255,0)';
     document.querySelector("body > div > h1 > a").innerHTML=''
-    document.title="python/pyqt";
+    document.title="python/record";
 
 </script>
 
@@ -17,4 +17,4 @@
 <!-- ___________________________________________ -->
 <!-- ___________________________________________ -->
 
-# PyQt
+# record

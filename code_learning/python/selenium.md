@@ -1,5 +1,5 @@
 
-<iframe id='head' align="center" width="100%" height="160" src="python_index.html"  frameborder="no" border="0" marginwidth="0" marginheight="px" scrolling="no" ></iframe>
+<iframe id='head' align="center" width="100%" height="160" src="python_show.html"  frameborder="no" border="0" marginwidth="0" marginheight="px" scrolling="no" ></iframe>
 
 <style>
     .iframe{margin:0 auto;}
@@ -8,8 +8,8 @@
 <script>
     var oDiv = document.getElementById('head');
     oDiv.style.position = 'fixed'; oDiv.style.top = '0px'; oDiv.style.left = '0px'; oDiv.style.backgroundColor = 'rgba(255,255,255,0)';
-    document.title="python/selenium";
     document.querySelector("body > div > h1 > a").innerHTML=''
+    document.title="python/selenium";
 
 </script>
 

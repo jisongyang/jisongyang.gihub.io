@@ -9,17 +9,33 @@
                 <a href="../jump.html"><iterm>Python</iterm></a>
             </div>
             <div class="ribbon">
-                <a href="learn"><spann>Learn</spann></a>
-                <a href="selenium"><spann>Selenium</spann></a>
-                <a href="matplot"><spann>Matplot</spann></a>
-                <a href="pyqt"><spann>PyQt</spann></a>
+                <a href="syntax"><spann>Syntax</spann></a>
+                <a href="install"><spann>Install</spann></a>
+                <a><submenu>Packet</submenu></a>
+                <a href="solution"><spann>Solution</spann></a>
+                <a href="record"><spann>Record</spann></a>
             </div>
+
             <div class="iter2">
                 <a href="../../index.html"><iterm>Home</iterm></a>
             </div>
         </div>
+        <div class='subbox' id="subbox">
+
+            <a href="io"><subspan>IO</subspan></a>
+            <a href="selenium"><subspan>Selenium</subspan></a>
+            <a href="matplot"><subspan>Matplot</subspan></a>
+            <a href="pyqt"><subspan>PyQt</subspan></a>
+        
+
+     
+
+        </div>
     </body>
 </html>
+
+
+
 <style>
     *{
         margin: 0;
@@ -27,7 +43,7 @@
     }
     body{
         text-align:center;
-        background-color:rgb(255, 255, 255);
+        /* background-color:rgb(255, 255, 255); */
         /* display: inline-block; */
         /* text-align: center; */
         /* margin:0 auto; */
@@ -37,6 +53,8 @@
         /* display: inline-block; */
         /* text-align: center; */
         margin:0 auto;
+        height: 64px;
+        /* border: 1px solid #000; */
     }
     .ribbon, .iter, .iter2{
         display: inline-block;
@@ -76,12 +94,18 @@
         float: left;
         margin-left: -40px;
     }
+
     a{
         float: left;
         height: 64px;
         text-decoration: none;
         overflow: hidden;
     }
+    .subbox a{
+        height: 40px;
+    }
+
+
     spann{
         margin-top: 18px;
         color: #fff;
@@ -92,6 +116,20 @@
         position: relative;
         transition: all 0.3s;
     }
+
+    submenu{
+        margin-top: 18px;
+        color: #fff;
+        line-height:48px;
+        padding: 0 16px;
+        background: #495057;
+        display: inline-block;
+        position: relative;
+        transition: all 0.3s;
+    }
+
+
+
     iterm{
         margin-top: 18px;
         color: #fff;
@@ -123,7 +161,12 @@
 
 
     a:hover spann{
-        margin-top: 10px;
+        /* margin-top: 10px; */
+        background: #666699;
+    }
+
+    a:hover submenu{
+        /* margin-top: 10px; */
         background: #666699;
     }
 
@@ -143,4 +186,148 @@
         border-left: 8px solid #666699;
         border-bottom: 8px solid #333;
     }
+
+    submenu::before{
+        content: "";
+        position: absolute;
+        top: 48px;
+        left: 0;
+        border-right: 8px solid #666699;
+        border-bottom: 8px solid #333;
+    }
+    submenu::after{
+        content: "";
+        position: absolute;
+        top:48px;
+        right: 0;
+        border-left: 8px solid #666699;
+        border-bottom: 8px solid #333;
+    }
+
+
+
+
+    .subbox subspan{
+        /* margin-top: 5px; */
+        /* margin-bottom: -50px; */
+        /* padding-bottom: 0 10px; */
+        color: #fff;
+        line-height:40px;
+        /* padding:0 0 0 16px; */
+        width: 100px;
+        /* background: #000; */
+        display: inline-block;
+        /* position: relative; */
+        transition: all 0.3s;
+        /* border: 1px solid #000; */
+
+        /* background: rgba(101,101,101,0.3); */
+        z-index: 9999;
+    }
+
+
+    a:hover subspan{
+        /* margin-top: 10px; */
+        background: rgba(150, 83, 84,0.8);
+    }
+
+
+    .subbox{
+        width: 50%;
+        left: 50%;
+        transform: translate(-50%,0%);
+        position: absolute;
+        /* top: 70px; */
+
+        text-align: center;
+        background: rgba(101,101,101,0.8);
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        /* border: 1px solid #000; */
+        /* padding: 0 50px; */
+
+        z-index: 999;
+        display: none;
+        max-width: 800px;
+        
+
+    }
+
 </style>
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+<script type="text/JavaScript">
+    $(function(){
+        $('.ribbon submenu').hover(
+            function(){
+                $('.subbox').css({'display':'flex'});
+                $('.ribbon submenu').css({'background':'#666699'});
+            },
+
+            function(){
+                $('.subbox').css({'display':'none'});
+                $('.ribbon submenu').css({'background':'#495057'});
+            },
+        );
+
+
+        $('.subbox').hover(
+            function(){
+                $('.subbox').css({'display':'flex'});
+                $('.ribbon submenu').css({'background':'#666699'});
+            },
+            function(){
+                $('.subbox').css({'display':'none'});
+                $('.ribbon submenu').css({'background':'#495057'});
+            });
+
+        $('.ribbon submenu').hover(
+            function(){
+                reinitIframe();
+            },
+
+            function(){
+                recoverframe();
+            },
+        );
+
+        $('.subbox').hover(
+            function(){
+                reinitIframe();
+            },
+
+            function(){
+                recoverframe();
+            },
+        );
+
+
+
+    });
+
+
+
+    function reinitIframe(){
+        var iframe = window.parent.document.getElementById("head");
+        try{
+            var bHeight = iframe.contentWindow.document.body.scrollHeight;
+            var dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
+            var height = Math.max(bHeight, dHeight);
+            iframe.height = height;
+            // console.log(height);
+        }
+        catch (ex){}
+        }
+
+    function recoverframe(){
+        var iframe = window.parent.document.getElementById("head");
+        try{
+            iframe.height = 160;
+            console.log(height);
+        }
+        catch (ex){}
+        }
+</script>
