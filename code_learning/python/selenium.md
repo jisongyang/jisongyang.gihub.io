@@ -11,28 +11,6 @@
     oDiv.style.position = 'fixed'; oDiv.style.top = '0px'; oDiv.style.left = '0px';
     document.title="python/selenium";
 
-    $(function(){
-        $('.ribbon submenu').hover(function(){
-            // $('.subbox').stop().animate({top:50},600);
-            $('.subbox').css({'display':'flex'});
-
-        },function(){
-            $('.subbox').css({'display':'none'});
-        },function(){
-            document.css({'height':'500'});
-        });
-
-
-        $('.subbox').hover(function(){
-            // $('.subbox').stop().animate({top:50},600);
-            $('.subbox').css({'display':'flex'});
-
-        },function(){
-            $('.subbox').css({'display':'none'});
-        });
-
-
-    });
 </script>
 
 <br><br>
