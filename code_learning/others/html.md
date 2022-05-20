@@ -8,13 +8,12 @@
     var oDiv = document.getElementById('head');
     oDiv.style.position = 'fixed'; oDiv.style.top = '0px'; oDiv.style.left = '0px'; oDiv.style.backgroundColor = 'rgba(255,255,255,0)';
     document.querySelector("body > div > h1 > a").innerHTML=''
-    document.title="others/html&css";
+    document.title="others/html";
 </script>
 <br><br>
 <!-- ___________________________________________ -->
 <!-- ___________________________________________ -->
 
-[Toc]
 
 # html
 
@@ -45,40 +44,3 @@
         </head>
     ```
 
-# css
-
-* 三角形的构造
-    ```css
-        /* 将正方形沿着两条对角线分为四个三角形 */
-        /* 隐藏三个方向上的三角形，则剩下某一个三角形 */
-        border: 24px solid #333;
-        border-top-color: transparent;
-        border-bottom-color: transparent;
-        border-right-color: transparent;
-
-        /* 左上角三角形*/
-        width: 0;
-        height: 0;
-        border-top: 100px solid red;
-        border-right: 100px solid transparent;
-
-        /*向上上三角形*/
-        width: 0;
-        height: 0;
-        border-left: 50px solid transparent;
-        border-right: 50px solid transparent;
-        border-bottom: 100px solid red;
-    ```
-
-* 多个按钮，最上层显示，分散对齐，垂直有滚动条
-    ```css
-        .src_button{
-            text-align: justify;
-            text-align-last: justify;
-            z-index: 9999;
-			top: 20px;
-            width: 15%;
-            height: 800px;
-            overflow-y: auto;
-        }
-    ```
