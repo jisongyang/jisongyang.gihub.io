@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>jisongyang.github.io</title>
+<meta name="generator" content="Jekyll v3.9.2" />
+<meta property="og:title" content="jisongyang.github.io" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://jisongyang.github.io/code_learning/python/selenium.html" />
+<meta property="og:url" content="https://jisongyang.github.io/code_learning/python/selenium.html" />
+<meta property="og:site_name" content="jisongyang.github.io" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="jisongyang.github.io" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"jisongyang.github.io","url":"https://jisongyang.github.io/code_learning/python/selenium.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=fd23e5516b5bf7413ac9f8dbaf83d233ace2ea49">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      
+      <h1><a href="https://jisongyang.github.io/">jisongyang.github.io</a></h1>
+      
+    <iframe id="head" align="center" width="100%" height="160" src="python_index.html" frameborder="no" border="0" marginwidth="0" marginheight="px" scrolling="no" z-Index="10"></iframe>
+<style>
+    /* .headbar{text-align:center} */
+    .iframe{margin:0 auto;}
+</style>
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+<script>
+    var oDiv = document.getElementById('head');
+    oDiv.style.position = 'fixed'; oDiv.style.top = '0px'; oDiv.style.left = '0px'; oDiv.style.backgroundColor = 'rgba(255,255,255,0)';
+    document.title="python/selenium";
+    document.querySelector("body > div > h1 > a").innerHTML=''
+
+</script>
+
+
+<script type="text/JavaScript">
+
+</script>
+
+<p><br /><br />
+<!-- ___________________________________________ -->
+<!-- ___________________________________________ --></p>
+
+<h1 id="selenium">selenium</h1>
+
+<ul>
+  <li>滚动界面
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">driver</span><span class="p">.</span><span class="n">execute_script</span><span class="p">(</span><span class="s">'window.scrollBy(0,200)'</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li>根据文本定位
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">包含文本</span><span class="p">:</span> <span class="n">find_element_by_xpath</span><span class="p">(</span><span class="s">"//*[contains(text(),'确定')]"</span><span class="p">)</span>
+  <span class="n">相同文本</span><span class="p">:</span> <span class="n">driver</span><span class="p">.</span><span class="n">find_element_by_xpath</span><span class="p">(</span><span class="s">"//*[text()='{}']"</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li>根据已知元素定位其他元素，本质上是<code class="language-plaintext highlighter-rouge">xpath</code>路径的寻找
+    <blockquote>
+      <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">比如</span><span class="p">:</span> <span class="n">先找到</span><span class="s">"确定"</span><span class="p">,</span> <span class="n">然后退回多重父元素</span><span class="p">,</span> <span class="n">然后找到相邻的元素</span><span class="p">,</span> <span class="n">再定位子元素</span>
+<span class="s">"//*[text()='确定']/../../../following-sibling::uni-view[2]/uni-view/uni-view[2]/uni-text/span"</span>
+</code></pre></div>      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th style="text-align: center">code</th>
+            <th style="text-align: center">意义</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="text-align: center">following-sibling::uni-view[2]</td>
+            <td style="text-align: center">之后的第二个标签</td>
+          </tr>
+          <tr>
+            <td style="text-align: center">following-sibling:: *</td>
+            <td style="text-align: center">同级的所有标签</td>
+          </tr>
+          <tr>
+            <td style="text-align: center">following-sibling:: *[1]</td>
+            <td style="text-align: center">同级的第一个标签</td>
+          </tr>
+        </tbody>
+      </table>
+    </blockquote>
+  </li>
+  <li>获取cookies以及加载cookies
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+  <span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="n">search_content</span><span class="p">,</span><span class="n">log_url</span><span class="p">,</span><span class="n">save_cookies</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+      <span class="n">options</span><span class="o">=</span><span class="n">webdriver</span><span class="p">.</span><span class="n">ChromeOptions</span><span class="p">()</span>
+      <span class="n">driver</span><span class="o">=</span><span class="n">webdriver</span><span class="p">.</span><span class="n">Chrome</span><span class="p">(</span><span class="n">chrome_options</span><span class="o">=</span><span class="n">options</span><span class="p">)</span>
+      <span class="n">driver</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">log_url</span><span class="p">)</span>
+      <span class="n">www</span><span class="o">=</span><span class="nb">input</span><span class="p">(</span><span class="s">'请输入任意键继续</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>         <span class="c1"># 第一次的时候扫码登录，或者账号登录，然后继续
+</span>      <span class="k">if</span><span class="p">(</span><span class="n">save_cookies</span><span class="p">):</span>
+          <span class="n">cookies</span><span class="o">=</span><span class="n">driver</span><span class="p">.</span><span class="n">get_cookies</span><span class="p">()</span>
+          <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">'cookies.txt'</span><span class="p">,</span><span class="s">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+              <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">cookies</span><span class="p">:</span>
+                  <span class="n">f</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+                  <span class="n">f</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+      <span class="k">else</span><span class="p">:</span>
+          <span class="n">cookies</span><span class="o">=</span><span class="p">[]</span>
+          <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">'cookies.txt'</span><span class="p">,</span><span class="s">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+              <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">f</span><span class="p">.</span><span class="n">readlines</span><span class="p">():</span>
+                  <span class="n">cookies</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="nb">eval</span><span class="p">(</span><span class="n">i</span><span class="p">.</span><span class="n">strip</span><span class="p">()))</span>
+          <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">cookies</span><span class="p">:</span>
+              <span class="n">driver</span><span class="p">.</span><span class="n">add_cookie</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+          <span class="n">time</span><span class="p">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+          <span class="n">driver</span><span class="p">.</span><span class="n">refresh</span><span class="p">()</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+
+      
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+  </body>
+</html>
