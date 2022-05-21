@@ -126,9 +126,12 @@
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
         <script>
             //找到frame
-            var oDiv = document.getElementById('head');
+            var oDiv = document.getElementById('head');
             // 设置frame的属性
-            oDiv.style.position = 'fixed'; oDiv.style.top = '0px'; oDiv.style.left = '0px'; oDiv.style.backgroundColor = 'rgba(255,255,255,0)';
+            oDiv.style.position='fixed'; 
+            oDiv.style.top='0px'; 
+            oDiv.style.left='0px'; 
+            oDiv.style.backgroundColor='rgba(255,255,255,0)';
             // 根据js路径定位元素并改变值
             document.querySelector("body > div > h1 > a").innerHTML=''
             // 设置网页标题
