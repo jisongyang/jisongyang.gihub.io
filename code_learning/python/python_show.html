@@ -4,6 +4,7 @@
         <base target="_parent">
     </head>
     <body>
+        <!-- 主菜单 -->
         <div class="box">
             <div class="iter">
                 <a href="../jump.html"><iterm>Python</iterm></a>
@@ -11,6 +12,7 @@
             <div class="ribbon">
                 <a href="syntax"><spann>Syntax</spann></a>
                 <a href="install"><spann>Install</spann></a>
+                <!-- 下拉菜单 -->
                 <a><submenu>Packet</submenu></a>
                 <a href="solution"><spann>Solution</spann></a>
                 <a href="record"><spann>Record</spann></a>
@@ -20,6 +22,7 @@
                 <a href="../../index.html"><iterm>Home</iterm></a>
             </div>
         </div>
+        <!-- 下拉菜单 -->
         <div class='subbox' id="subbox">
 
             <a href="io"><subspan>IO</subspan></a>
@@ -27,9 +30,6 @@
             <a href="matplot"><subspan>Matplot</subspan></a>
             <a href="pyqt"><subspan>PyQt</subspan></a>
         
-
-     
-
         </div>
     </body>
 </html>
@@ -54,8 +54,8 @@
         /* display: inline-block; */
         /* text-align: center; */
         margin:0 auto;
-    
         height: 80px;
+        /* 设置背景为白色,这样展示时,往下滚动网页可以遮挡内容 */
         background-color:rgb(255, 255, 255);
         /* border: 1px solid #000; */
     }
@@ -207,25 +207,14 @@
         border-bottom: 8px solid #333;
     }
 
-
-
-
     .subbox subspan{
-        /* margin-top: 5px; */
-        /* margin-bottom: -50px; */
-        /* padding-bottom: 0 10px; */
         border-radius: 10px;
         color: #fff;
         line-height:40px;
-        /* padding:0 0 0 16px; */
         width: 100px;
-        /* background: #000; */
         display: inline-block;
-        /* position: relative; */
         transition: all 0.3s;
         /* border: 1px solid #000; */
-
-        /* background: rgba(101,101,101,0.3); */
         z-index: 9999;
     }
 
@@ -247,17 +236,15 @@
         text-align: center;
         background: rgba(101,101,101,0.8);
         border-radius: 10px;
+        /* 自动换行,分散居中 */
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
         /* border: 1px solid #000; */
-        /* padding: 0 50px; */
 
         z-index: 999;
         display: none;
         max-width: 500px;
-        
-
     }
 
 </style>
@@ -309,10 +296,7 @@
             },
         );
 
-
-
     });
-
 
 
     function reinitIframe(){
@@ -322,7 +306,6 @@
             var dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
             var height = Math.max(bHeight, dHeight);
             iframe.height = height;
-            // console.log(height);
         }
         catch (ex){}
         }
@@ -331,7 +314,6 @@
         var iframe = window.parent.document.getElementById("head");
         try{
             iframe.height = 100;
-            console.log(height);
         }
         catch (ex){}
         }

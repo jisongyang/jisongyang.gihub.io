@@ -55,3 +55,10 @@
         }
     ```
 
+* 分散对齐居中
+    ```css
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    ```
+
