@@ -1,19 +1,23 @@
-
+*{
+    margin: 1px;
+    padding: 0px;
+}
 
 
 /* 设置整个界面 */
 .show_interface{
     width: 99%;
     /* 设置手机端高度，超出手机一屏则可以下滑 */
-    height: 99%;
+    height: calc(99vh);
     overflow: hidden;
     /* display: inline-flex; */
+    position:absolute;
 }
 
 /* 设置搜索面板 */
 .search_panel{
     width: 99%;
-    height: 20%;
+    height: 10%;
     justify-content: center;
     /* border: 1px solid #000; */
 } 
@@ -21,7 +25,8 @@
 /* 设置结果面板 */
 .result_panel{
     width: 99%;
-    height: 79%;
+    height: 89%;
+    overflow: hidden;
     /* border: 1px solid #000; */
 }
 
@@ -33,7 +38,7 @@
     width: 100%;
     /* position: absolute; */
     /* top: 5%; */
-    height: 10%;
+    height: 100%;
     display: flex;
 }
 
@@ -42,7 +47,7 @@
     /* 水平居中 */
     margin: 0 auto;
     width: 100%;
-    height: 10%;
+    height: 100%;
     border: 1px solid #000;
     position: relative;
     display: flex;
@@ -52,7 +57,7 @@
 
 /* 设置查询清空按钮 */
 .action{
-    height: 10%;
+    height: 100%;
     width: 25%;
     display: flex;
     justify-content: space-between;
@@ -64,6 +69,7 @@
     height: 40px;
     /* margin: 10px; */
     margin: auto;
+    margin-right: 3px;
 }
 
 
@@ -105,40 +111,21 @@
 
 /* 设置结果面板上半部分 */
 .result_up{
-    display:flex;
-    flex-direction: column;
-    height: 200px;
+    /* display:flex;
+    flex-direction: column; */
+    height: 25%;
     border: 1px solid #000;
+    overflow: hidden;
     
-}
-
-/* 设置结果面板上半部分的上下两部分 */
-#date_lis,#date_sta{
-    /* display: inline-block; */
-    width: 100%;
-    height:50%;
-    /* overflow-y: auto; */
-    border: 1px solid #000;
 }
 
 /* 设置结果面板下半部分 */
 .result_down{
-    display:flex;
-    flex-direction: row;
-    height: 700px;
+    /* display:flex;
+    flex-direction: row; */
+    height: 74%;
     border: 1px solid #000;
     
-}
-
-
-/* 设置数字展示 */
-.num{
-    position: relative;
-    width: 30%;
-    height: 100%;
-    /* border: 1px solid #000; */
-    align-items:center;
-    justify-content: space-between;
 }
 
 
@@ -146,120 +133,41 @@
 
 /* _____________________________________________________________________ */
 
-.src_button{
+.chapter_lis .src_button{
     width: 100%;
     height: 100%;
-}
 
-/* 设置按钮菜单栏 */
-.button_menu{
-    height: 20%;
-    border: 1px solid #000;
-    /* 内部元素分散对齐 */
-    display: flex;
-    justify-content: space-between;
-}
-
-/* 设置按钮占整个父元素的长宽比 */
-.button_menu button{
-    width: 30%;
-    height: 80%;
-    margin: 5px;
+    overflow: hidden;
 }
 
 
 
-.num_up,.num_down{
-    display: flex;
-    width: 100%;
-    /* max-width: 80px; */
-    height: 50%;
-    justify-content: space-between;
+/* 设置按钮显示部分 */
+.button_show{
+    /* height: 99%; */
+    width: 98%;
+    height: 98%;
+    margin: 1%;
+    /* margin-bottom: 10px; */
+    /* 每一行按钮居中 */
+    text-align: center;
+    /* 纵向超出使用滑动条 */
+    overflow-y: auto;
+    /* padding-bottom: -30px; */
+    max-height: calc(20vh);
+
     /* border: 1px solid #000; */
-    text-align: justify;
-    /* line-height: 100%; */
 }
-
 
 
 .button_show button{
-    width: 135px;
-    text-align: left;
+    width: 80px;
+    text-align: center;
     /* margin-right: 5px; */
 }
 .active{
     color: red;
 }
-
-/* 设置按钮显示部分 */
-.button_show{
-    height: 78%;
-    /* 每一行按钮居中 */
-    /* text-align: center; */
-    /* 纵向超出使用滑动条 */
-    overflow-y: auto;
-    /* padding-bottom: -30px; */
-}
-
-
-/* 设置统计显示菜单 */
-.sta_menu{
-    text-align: center;
-    display: flex;
-    justify-content: space-between;
-    padding-left: 10%;
-    padding-right: 10%;
-    height: 20%;
-    border: 1px solid #000;
-}
-
-
-.sta_show{
-    width: 100%;
-    height: 80%;
-    display: flex;
-    justify-content: center;
-    position: relative;
-    /* align-items: center; */
-    /* border: 1px solid #000; */
-}
-
-/* 设置统计显示 */
-#month_sta_box{
-    margin-top: 10px;
-    background-color: #fff;
-    position:absolute;
-    width: 90%;
-    height: 90%;
-    left: 5%;
-
-    /* padding-left: 2%; */
-    /* padding-right: 2%; */
-    text-align: center;
-    /* border: 1px solid #000; */
-    /* z-index: 5; */
-}
-
-
-#time_sta_box{
-    margin-top: 10px;
-    background-color: #fff;
-    position:absolute;
-    width: 90%;
-    height: 90%;
-    text-align: center;
-    /* border: 1px solid #000; */
-    /* z-index: 10; */
-}
-
-.show_image{
-    z-index: 10;
-}
-.hide_image{
-    z-index: 5;
-}
-
-
 
 /* 设置内容显示 */
 #content_show{
@@ -270,12 +178,5 @@
     padding-right: 10px;
     /* border: 1px solid #000; */
     overflow-y: auto;
+    font-size: small;
 }
-
-/* 设置文本 */
-/* p{
-    columns: #4a4a4a;
-    margin-top: 30px;
-    margin-bottom: 6px;
-    font-stretch: 15px;
-} */

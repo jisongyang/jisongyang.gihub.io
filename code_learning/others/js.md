@@ -183,3 +183,28 @@
             });
         });
     ```
+
+* js修改html元素及时渲染（setTimeout）
+    ``` js
+        // 查询按钮函数
+        function search(){
+            // 显示（请稍等）
+            document.getElementById('content_show').innerHTML='请稍等一下下下下下=。='
+
+            setTimeout(function search_process(){
+                swap_file()                     // 获取文件目录
+                read_input();                   // 读取搜索条件        
+                search_result=get_result();     // 得到搜索结果
+                show_reseult(search_result);    // 展示结果
+            })
+
+        }
+
+    ```
+* 判断对象是否为空
+    ``` js
+        JSON.stringify(ob) == "{}"
+    ```
+
+
+   
