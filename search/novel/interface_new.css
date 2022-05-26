@@ -1,0 +1,182 @@
+*{
+    margin: 1px;
+    padding: 0px;
+}
+
+
+/* 设置整个界面 */
+.show_interface{
+    width: 99%;
+    /* 设置手机端高度，超出手机一屏则可以下滑 */
+    height: calc(99vh);
+    overflow: hidden;
+    /* display: inline-flex; */
+    position:absolute;
+}
+
+/* 设置搜索面板 */
+.search_panel{
+    width: 99%;
+    height: 10%;
+    justify-content: center;
+    /* border: 1px solid #000; */
+} 
+
+/* 设置结果面板 */
+.result_panel{
+    width: 99%;
+    height: 89%;
+    overflow: hidden;
+    /* border: 1px solid #000; */
+}
+
+
+
+/* _____________________________________________________________________ */
+
+.border{
+    width: 100%;
+    /* position: absolute; */
+    /* top: 5%; */
+    height: 100%;
+    display: flex;
+}
+
+/* 设置面板四个输入div */
+.content{
+    /* 水平居中 */
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #000;
+    position: relative;
+    display: flex;
+    /* justify-content: space-between; */
+    /* top:-20px; */
+}
+
+/* 设置查询清空按钮 */
+.action{
+    height: 100%;
+    width: 25%;
+    display: flex;
+    justify-content: space-between;
+    /* margin: 10px; */
+    /* border: 1px solid #000; */
+}
+.action button{
+    width: 40px;
+    height: 40px;
+    /* margin: 10px; */
+    margin: auto;
+    margin-right: 3px;
+}
+
+
+
+
+/* _____________________________________________________________________ */
+
+
+/* 设置内容输入 */
+.content{
+    flex: left;
+}
+.content_text{
+    width: 20%;
+    /* border: 1px solid #000; */
+    text-align: center;
+    display:flex;
+}
+.content_text p{
+    margin: auto;
+}
+.c_input{
+    margin: auto;
+    width: 90%;
+    /* border: 1px solid #000; */
+    text-align: left;   
+}
+.content input{
+    /* float: left; */
+    width: 90%;
+    height: 30px;
+    text-align: center;
+}
+
+
+
+/* _____________________________________________________________________ */
+
+
+/* 设置结果面板上半部分 */
+.result_up{
+    /* display:flex;
+    flex-direction: column; */
+    height: 25%;
+    border: 1px solid #000;
+    overflow: hidden;
+    
+}
+
+/* 设置结果面板下半部分 */
+.result_down{
+    /* display:flex;
+    flex-direction: row; */
+    height: 74%;
+    border: 1px solid #000;
+    
+}
+
+
+
+
+/* _____________________________________________________________________ */
+
+.chapter_lis .src_button{
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+}
+
+
+
+/* 设置按钮显示部分 */
+.button_show{
+    /* height: 99%; */
+    width: 98%;
+    height: 98%;
+    margin: 1%;
+    /* margin-bottom: 10px; */
+    /* 每一行按钮居中 */
+    text-align: center;
+    /* 纵向超出使用滑动条 */
+    overflow-y: auto;
+    /* padding-bottom: -30px; */
+    max-height: calc(20vh);
+
+    /* border: 1px solid #000; */
+}
+
+
+.button_show button{
+    width: 80px;
+    text-align: center;
+    /* margin-right: 5px; */
+}
+.active{
+    color: red;
+}
+
+/* 设置内容显示 */
+#content_show{
+    width: 100%;
+    height:96%;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    /* border: 1px solid #000; */
+    overflow-y: auto;
+    font-size: small;
+}

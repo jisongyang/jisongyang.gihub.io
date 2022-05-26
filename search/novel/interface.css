@@ -1,0 +1,281 @@
+
+
+
+/* 设置整个界面 */
+.show_interface{
+    width: 99%;
+    /* 设置手机端高度，超出手机一屏则可以下滑 */
+    height: 99%;
+    overflow: hidden;
+    /* display: inline-flex; */
+}
+
+/* 设置搜索面板 */
+.search_panel{
+    width: 99%;
+    height: 20%;
+    justify-content: center;
+    /* border: 1px solid #000; */
+} 
+
+/* 设置结果面板 */
+.result_panel{
+    width: 99%;
+    height: 79%;
+    /* border: 1px solid #000; */
+}
+
+
+
+/* _____________________________________________________________________ */
+
+.border{
+    width: 100%;
+    /* position: absolute; */
+    /* top: 5%; */
+    height: 10%;
+    display: flex;
+}
+
+/* 设置面板四个输入div */
+.content{
+    /* 水平居中 */
+    margin: 0 auto;
+    width: 100%;
+    height: 10%;
+    border: 1px solid #000;
+    position: relative;
+    display: flex;
+    /* justify-content: space-between; */
+    /* top:-20px; */
+}
+
+/* 设置查询清空按钮 */
+.action{
+    height: 10%;
+    width: 25%;
+    display: flex;
+    justify-content: space-between;
+    /* margin: 10px; */
+    /* border: 1px solid #000; */
+}
+.action button{
+    width: 40px;
+    height: 40px;
+    /* margin: 10px; */
+    margin: auto;
+}
+
+
+
+
+/* _____________________________________________________________________ */
+
+
+/* 设置内容输入 */
+.content{
+    flex: left;
+}
+.content_text{
+    width: 20%;
+    /* border: 1px solid #000; */
+    text-align: center;
+    display:flex;
+}
+.content_text p{
+    margin: auto;
+}
+.c_input{
+    margin: auto;
+    width: 90%;
+    /* border: 1px solid #000; */
+    text-align: left;   
+}
+.content input{
+    /* float: left; */
+    width: 90%;
+    height: 30px;
+    text-align: center;
+}
+
+
+
+/* _____________________________________________________________________ */
+
+
+/* 设置结果面板上半部分 */
+.result_up{
+    display:flex;
+    flex-direction: column;
+    height: 200px;
+    border: 1px solid #000;
+    
+}
+
+/* 设置结果面板上半部分的上下两部分 */
+#date_lis,#date_sta{
+    /* display: inline-block; */
+    width: 100%;
+    height:50%;
+    /* overflow-y: auto; */
+    border: 1px solid #000;
+}
+
+/* 设置结果面板下半部分 */
+.result_down{
+    display:flex;
+    flex-direction: row;
+    height: 700px;
+    border: 1px solid #000;
+    
+}
+
+
+/* 设置数字展示 */
+.num{
+    position: relative;
+    width: 30%;
+    height: 100%;
+    /* border: 1px solid #000; */
+    align-items:center;
+    justify-content: space-between;
+}
+
+
+
+
+/* _____________________________________________________________________ */
+
+.src_button{
+    width: 100%;
+    height: 100%;
+}
+
+/* 设置按钮菜单栏 */
+.button_menu{
+    height: 20%;
+    border: 1px solid #000;
+    /* 内部元素分散对齐 */
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 设置按钮占整个父元素的长宽比 */
+.button_menu button{
+    width: 30%;
+    height: 80%;
+    margin: 5px;
+}
+
+
+
+.num_up,.num_down{
+    display: flex;
+    width: 100%;
+    /* max-width: 80px; */
+    height: 50%;
+    justify-content: space-between;
+    /* border: 1px solid #000; */
+    text-align: justify;
+    /* line-height: 100%; */
+}
+
+
+
+.button_show button{
+    width: 135px;
+    text-align: left;
+    /* margin-right: 5px; */
+}
+.active{
+    color: red;
+}
+
+/* 设置按钮显示部分 */
+.button_show{
+    height: 78%;
+    /* 每一行按钮居中 */
+    /* text-align: center; */
+    /* 纵向超出使用滑动条 */
+    overflow-y: auto;
+    /* padding-bottom: -30px; */
+}
+
+
+/* 设置统计显示菜单 */
+.sta_menu{
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10%;
+    padding-right: 10%;
+    height: 20%;
+    border: 1px solid #000;
+}
+
+
+.sta_show{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    /* align-items: center; */
+    /* border: 1px solid #000; */
+}
+
+/* 设置统计显示 */
+#month_sta_box{
+    margin-top: 10px;
+    background-color: #fff;
+    position:absolute;
+    width: 90%;
+    height: 90%;
+    left: 5%;
+
+    /* padding-left: 2%; */
+    /* padding-right: 2%; */
+    text-align: center;
+    /* border: 1px solid #000; */
+    /* z-index: 5; */
+}
+
+
+#time_sta_box{
+    margin-top: 10px;
+    background-color: #fff;
+    position:absolute;
+    width: 90%;
+    height: 90%;
+    text-align: center;
+    /* border: 1px solid #000; */
+    /* z-index: 10; */
+}
+
+.show_image{
+    z-index: 10;
+}
+.hide_image{
+    z-index: 5;
+}
+
+
+
+/* 设置内容显示 */
+#content_show{
+    width: 100%;
+    height:96%;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    /* border: 1px solid #000; */
+    overflow-y: auto;
+}
+
+/* 设置文本 */
+/* p{
+    columns: #4a4a4a;
+    margin-top: 30px;
+    margin-bottom: 6px;
+    font-stretch: 15px;
+} */

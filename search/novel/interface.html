@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
+    <title>search</title>
+    <link rel="stylesheet" href="interface_new.css">
+    <script src='http://code.jquery.com/jquery-1.4.1.min.js'></script>
+    <script src="interface_new.js"></script>
+
+
+</head>
+<body>
+        <div class="show_interface">
+            <div class="search_panel">
+                <div class="border">
+                    <div class="content">
+                        <div class=content_text>
+                            <p><b>内容</b></p>
+                        </div>
+                        <div class="c_input">
+                            <input type="content" id='content' value="呜呜呜">
+                        </div>
+
+                        <div class="action">
+                            <button type="button" onclick="search()">查询</button>
+                            <button type="button" onclick="delete_all()">清空</button>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+            
+            <div class="result_panel">               
+                <div class="result_up">
+                    <div id="chapter_lis">
+                        <div class='src_button'>
+                            <div class="button_show" id="button_show">
+                                <!-- <p><b>内容</b></p>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+
+                                <p><b>内容</b></p>
+                                <button type="button" onclick="search()">查询</button>
+                                <button type="button" onclick="search()">查询</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button>
+                                <button type="button" onclick="search()">第1章</button>
+                                <button type="button" onclick="search()">第1000章</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="result_down">
+                    <div id='content_show'></div>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>

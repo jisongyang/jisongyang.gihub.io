@@ -61,4 +61,10 @@
         justify-content: space-between;
         flex-wrap: wrap;
     ```
+* 纵向进度条，如果当前元素是百分比高度，则需要再设置当前设备窗口高度的百分比
+    ```css
+        height: 98%;
+        overflow-y: auto;
+        max-height: calc(20vh);
+    ```
 

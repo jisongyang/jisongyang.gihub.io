@@ -70,7 +70,7 @@
 * 切换frame
     ```python
     # 根据id切换到对应的frame
-    driver.switch_to.frame(‘id名’)
+    driver.switch_to.frame('id名')
 
     # 切换回主文档
     driver.switch_to.default_content()

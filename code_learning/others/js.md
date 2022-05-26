@@ -166,3 +166,20 @@
             }
     ```
 
+* 生成连续数字数组
+    ``` html
+        <script>
+            var lis = Array.from(new Array(end + 1).keys()).slice(start);
+        </script>
+    ``` 
+
+* 避免加载中文乱码
+    ``` js
+        $(function () {
+            $.ajaxSetup({
+                'beforeSend': function (xhr) {
+                    xhr.overrideMimeType('text/plain; charset=gb2312');
+                }
+            });
+        });
+    ```
