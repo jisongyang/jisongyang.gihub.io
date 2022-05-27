@@ -171,11 +171,12 @@
 
 /* 设置内容显示 */
 #content_show{
-    width: 100%;
+    width: 96%;
     height:96%;
     padding-top: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 2%;
+    padding-right: 2%;
+    /* margin-right: 10px; */
     /* border: 1px solid #000; */
     overflow-y: auto;
     font-size: small;
