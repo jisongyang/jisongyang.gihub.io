@@ -90,7 +90,7 @@ function read_input(){
 // 读取单个文件
 function read_singe_file(now_novel,now_chapter){
     file_name='novel/'+now_novel+'/'+now_chapter+'.txt'
-    // console.log(file_name)
+    console.log(file_name)
     
     $.ajaxSetup({async:false})
     file_content=$.ajax({url:file_name,async:false})['response'];
@@ -133,8 +133,8 @@ function get_result(){
             if(now_content.includes(search_content)){
                 search_flag=true;
                 [now_content,conut_num]=highlight_sentence(now_content,search_content,conut_num)
-                // console.log(now_content);
-                // console.log('查询到个数',conut_num);
+                console.log(now_content);
+                console.log('查询到个数',conut_num);
                 now_result_data[now_novel][now_chapter]=now_content
             }  
         }
