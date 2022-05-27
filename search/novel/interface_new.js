@@ -2,7 +2,7 @@ var novel_data
 var search_content,search_result
 var novel_dict={}
 var pre_red_num=0,now_red_num=0
-
+var search_cnt=0
 
 // 避免加载中文乱码
 $(function () {
@@ -26,6 +26,8 @@ function delete_all(){
 
 // 查询按钮函数
 function search(){
+
+    search_cnt+=1
 
     // 显示（请稍等）
     show_info()
@@ -121,7 +123,10 @@ function get_result(){
     // 对每一篇小说遍历
     for(now_novel in novel_dict){
         // document.getElementById('content_show').innerHTML='请稍等一下下下下下=。= '
-        // setTimeout(alert(`开始搜索《${now_novel}》，一共${novel_dict[now_novel]}章`),0)
+        if(search_cnt==1){
+            setTimeout(alert(`点击确定开始搜索小说《${now_novel}》`),0)
+        }
+        
 
         now_result_data[now_novel]={}
 
@@ -132,7 +137,7 @@ function get_result(){
 
         // 生成章节目录（一个连续数组）
         chapter_list=Array.from(new Array(all_chapter.length).keys()).slice(0)
-        console.log(chapter_list)
+        // console.log(chapter_list)
         // 对当前小说的每一章遍历
         for(now_chapter of chapter_list){
             // 读取当前章节
@@ -144,7 +149,7 @@ function get_result(){
                 search_flag=true;
                 [now_content,conut_num]=highlight_sentence(now_content,search_content,conut_num)
                 // console.log(now_content);
-                console.log('查询到个数',conut_num);
+                // console.log('查询到个数',conut_num);
                 now_result_data[now_novel][now_chapter]=now_content
             }  
         }
