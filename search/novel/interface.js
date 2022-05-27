@@ -69,7 +69,7 @@ function swap_file(){
     console.log(novel_info)
     for(var ob of novel_info.split('\n')){
         [novel_name,chapter_num]=ob.split('\t')
-        novel_dict[novel_name]=chapter_num.split('\r')[0]
+        novel_dict[novel_name]=chapter_num.split('\n')[0]
     }
     console.log(novel_dict)
 }
@@ -120,6 +120,9 @@ function get_result(){
 
     // 对每一篇小说遍历
     for(now_novel in novel_dict){
+        // document.getElementById('content_show').innerHTML='请稍等一下下下下下=。= '
+        setTimeout(alert(`开始搜索《${now_novel}》，一共${novel_dict[now_novel]}章`),0)
+
         now_result_data[now_novel]={}
         // 生成章节目录（一个连续数组）
         chapter_list=Array.from(new Array(Number(novel_dict[now_novel]) + 1).keys()).slice(0)
@@ -133,7 +136,7 @@ function get_result(){
             if(now_content.includes(search_content)){
                 search_flag=true;
                 [now_content,conut_num]=highlight_sentence(now_content,search_content,conut_num)
-                console.log(now_content);
+                // console.log(now_content);
                 console.log('查询到个数',conut_num);
                 now_result_data[now_novel][now_chapter]=now_content
             }  
@@ -142,10 +145,108 @@ function get_result(){
         if(JSON.stringify(now_result_data[now_novel]) != "{}"){
             result_data[now_novel]=now_result_data[now_novel]
         }
-        console.log(result_data)
+        // console.log(result_data)
     }
     return result_data
 }
+
+
+
+
+// // 得到搜索结果
+// function get_result(){
+//     var conut_num=0;
+//     var result_data={},now_result_data={}
+
+//     // 如果没有输入返回空
+//     if(search_content==''){
+//         return result_data
+//     }
+
+
+//     // // 对每一篇小说遍历
+//     // for(now_novel in novel_dict){
+//     //     // document.getElementById('content_show').innerHTML='请稍等一下下下下下=。= '
+
+
+//     //     now_result_data[now_novel]={}
+//     //     // 生成章节目录（一个连续数组）
+//     //     chapter_list=Array.from(new Array(Number(novel_dict[now_novel]) + 1).keys()).slice(0)
+//     //     // 对当前小说的每一章遍历
+//     //     for(now_chapter of chapter_list){
+//     //         // 读取当前章节
+//     //         now_content=read_singe_file(now_novel,now_chapter)
+//     //         // console.log(now_content)
+
+//     //         // 如果包含查询的内容
+//     //         if(now_content.includes(search_content)){
+//     //             search_flag=true;
+//     //             [now_content,conut_num]=highlight_sentence(now_content,search_content,conut_num)
+//     //             console.log(now_content);
+//     //             console.log('查询到个数',conut_num);
+//     //             now_result_data[now_novel][now_chapter]=now_content
+//     //         }  
+//     //     }
+//     var i=0
+//     var loop=function(){
+
+//         // console.log('f-i',i)
+//         if(i>=2){
+//             console.log('www')
+//             return
+//         }
+//         console.log('i',i)
+//         document.getElementById('content_show').innerHTML=`正在搜索第${i}篇小说`
+//         now_novel=Object.keys(novel_dict)[i]
+//         now_result_data[now_novel]={}
+//         // 生成章节目录（一个连续数组）
+//         chapter_list=Array.from(new Array(Number(novel_dict[now_novel]) + 1).keys()).slice(0)
+//         // 对当前小说的每一章遍历
+//         for(now_chapter of chapter_list){
+//             // 读取当前章节
+//             now_content=read_singe_file(now_novel,now_chapter)
+//             // console.log(now_content)
+
+//             // 如果包含查询的内容
+//             if(now_content.includes(search_content)){
+//                 search_flag=true;
+//                 [now_content,conut_num]=highlight_sentence(now_content,search_content,conut_num)
+//                 // console.log(now_content);
+//                 console.log('查询到个数',conut_num);
+//                 now_result_data[now_novel][now_chapter]=now_content
+//             }  
+//         }
+
+//         if(JSON.stringify(now_result_data[now_novel]) != "{}"){
+//             result_data[now_novel]=now_result_data[now_novel]
+//         }
+//         console.log(result_data)
+
+//         i++
+       
+//         setTimeout(loop,0);
+//     }
+
+//     setTimeout(loop,0);
+
+//     console.log('r',result_data)
+
+
+//     return result_data
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -175,18 +276,19 @@ function show_reseult(search_result){
 
 // 构建章节查询结果的html
 function get_chapter_html(chapter_content){
-    now_lis=chapter_content.split('\r')
+    now_lis=chapter_content.split('\n')
     // console.log(now_lis)
     clear_lis=[]
     for (now_sentence of now_lis){
         // console.log(now_sentence)
         // now_sentence= now_sentence.replace(/\r|\n/g, "")
-        if(now_sentence!='\n'){
-            clear_lis.push(now_sentence)
-        }
+        if(now_sentence=='\n' || now_sentence=="" || now_sentence=='\r'){
+            continue;
+       }
+       clear_lis.push(now_sentence)
         
     }
-
+    // console.log(clear_lis)
 
     return     '<div class="each_day">'+'<br>&emsp;&emsp;'+clear_lis.join('<br><br>')+'<br>'+'</div>'
 }
