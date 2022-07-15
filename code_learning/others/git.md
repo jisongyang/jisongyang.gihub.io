@@ -33,7 +33,7 @@
     git remote add origin github仓库地址
     
     将本地仓库推送到远端仓库
-    git push origin master
+    git push origin master  使用 git push -u 可以方便之后的命令输入
 
     ```
 
