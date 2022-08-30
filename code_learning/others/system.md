@@ -23,7 +23,7 @@
     cat  /usr/local/cuda/version.txt 
 ```
 
-* 赋予文件全线
+* 赋予文件权限
 ``` linux
     chmod 777 file
 ```
@@ -57,6 +57,23 @@
 ``` shell
     sed 's/要被取代的字串/新的字串/g'
 ```
+
+* 工具命令
+``` shell
+    # 转换编码格式
+    piconv -f gb2312 -t UTF-8 a.csv  >  c.csv
+
+    # jupyter将ipynb生成python
+    jupyter nbconvert --to python model_v1.ipynb
+
+    # hive传参和运行sql文件
+    hive -hiveconf yesterday=$yesterday \
+        -hiveconf day_before_180=$day_before_180 \
+        -f rp_exe_app_dm_pricerisk_currentday_pin_features.sql 
+
+
+```
+
 
 ### conda command
 * conda虚拟环境
