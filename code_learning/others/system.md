@@ -53,6 +53,11 @@
                         # -r reverse order while sorting （反序）
 ```
 
+* sed
+``` shell
+    sed 's/要被取代的字串/新的字串/g'
+```
+
 ### conda command
 * conda虚拟环境
 ``` shell
@@ -69,6 +74,7 @@
     dism /online /cleanup-image /restorehealth
     sfc /scannow
 ```
+
 
 ### windows
 * 更新host

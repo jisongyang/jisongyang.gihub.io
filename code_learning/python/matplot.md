@@ -85,6 +85,29 @@
         # markerscale       图例标记与原始标记的相对大小
         # bbox_to_anchor    绝对位置
     ```
+* 画分层柱状图
+```python
+    fig,ax=plt.subplots(1,2,figsize=(10,6))
+    
+    ## 数值
+    ax[0].bar(labels,cnt_lis[0],label='b')
+    ax[0].bar(labels,cnt_lis[1],bottom=cnt_lis[0],label='jd')
+    ax[0].set_xticklabels(labels,rotation=30)
+    ax[0].legend()
+
+
+    ## 百分比
+    cnt_lis=[np.array(x) for x in cnt_lis]
+    per0=cnt_lis[0]/cnt_lis[2]
+    per1=cnt_lis[1]/cnt_lis[2]
+    ax[1].bar(labels,per0,label='b')
+    ax[1].bar(labels,per1,bottom=per0,label='jd')
+    ax[1].set_xticklabels(labels,rotation=30)
+    ax[1].legend()
+
+    plt.show()
+```
+
 
 
 * 基本样式
