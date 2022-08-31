@@ -70,8 +70,6 @@
     hive -hiveconf yesterday=$yesterday \
         -hiveconf day_before_180=$day_before_180 \
         -f rp_exe_app_dm_pricerisk_currentday_pin_features.sql 
-
-
 ```
 
 
