@@ -34,3 +34,9 @@
     //2.在md中添加js代码隐藏掉主标题h1
         document.getElementsByTagName('h1')[0].style.display = 'none';
     ```
+* vscode添加markdown的目录,小括号中打"#"之后会弹窗选择指向位置
+    ```
+    * [目录中名字](#指向的位置)
+    * [pyspark](#pyspark)
+    * [HiveTask](#hivetask)
+    ```
