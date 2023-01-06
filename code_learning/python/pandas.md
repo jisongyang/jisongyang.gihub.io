@@ -35,6 +35,9 @@
     ```python
             # axis=1即传入每一行，axis=1即传入每一列
             df_feature['order']=df_feature.apply(aim_func,axis=1)
+            # 对某一列简单操作
+            df_feature['order_set']=df_feature['order_set'].map(lambda x:x.split(' '))
+
     ```
 
 * pandas判断空值

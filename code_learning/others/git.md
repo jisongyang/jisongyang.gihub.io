@@ -43,6 +43,11 @@
     git add -u  提交被修改(modified)和被删除(deleted)文件，不包括新文件(new)
     git add .   提交新文件(new)和被修改(modified)文件，不包括被删除(deleted)文件
     ```
+* 查看缓冲区有哪些文件
+    ```git
+    git ls-files
+    ```
+
 
 * git reset
     ```git
@@ -70,7 +75,7 @@
     log/*                       忽略log下的所有文件
     css/*.css                   忽略css目录下的.css文件
 
-    在gitignore文件添加指定的留下文件，忽略其他所有文件
+    在gitignore文件添加指定的留下文件，忽略其他所有文件(以下三句一起使用)
     *                           忽略所有文件
     !*.py                       不忽略py文件
     !*/                         不忽略文件夹（配合上面一句，不忽略所有子目录下的py文件）
