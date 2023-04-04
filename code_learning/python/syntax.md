@@ -89,7 +89,12 @@
     # 固定宽度
     print('{:20}'.format('www'))
 ```
-
+* multiprocessing在多个进程中贡献变量
+```python
+    manager=multiprocessing.Manager()
+    failed_cnt=manager.list()
+    failed_cnt.append(0)
+```
 
 # leetcode onenote
 
