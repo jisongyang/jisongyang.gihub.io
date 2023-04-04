@@ -47,7 +47,7 @@
 * 页面加载关键的请求：`?locale=zh_CN`，`page-init?locale=zh_CN`，`captcha?type=image`
 
 <center>
-<img src='image/apple_page_show.PNG' width="90%">
+<img src='./image/apple_page_show.png' width="90%">
 </center>
 
 * 提交的请求：`coverage`
@@ -65,7 +65,7 @@
 * 将GET请求的结果保存为jpg图片，即验证码图片，参见上面selenium版本的方法
 
 <center>
-<img src='image/apple_image_get.PNG' width="90%">
+<img src='./image/apple_image_get.png' width="90%">
 </center>
 
 ##### 4.2.2 验证码提交
@@ -77,7 +77,7 @@
 * 将该请求的Headers全部复制下来，使用requests的POST请求，带上正确的序列号和验证码，是能拿到数据的。注释掉Headers中的`Cookie`仍然可以。注释掉Headers中的`x-apple-auth-token`就不行。并且发现这里的`x-apple-auth-token`和上面获取验证码图片的`x-apple-auth-token`是一样
 
 <center>
-<img src='image/apple_coverage_post.PNG' width="90%">
+<img src='./image/apple_coverage_post.png' width="90%">
 </center>
 
 * 将POST请求的结果解析成json，则可以提取出想要查询的序列号激活信息
@@ -92,7 +92,7 @@
 * 然而，想要获取`page-init?locale=zh_CN`请求的值，也需要带上该请求的Headers。发现当前Headers中仍然有`x-apple-auth-token`字段，并且与上面其他两个请求中的`x-apple-auth-token`值不同
 
 <center>
-<img src='image/apple_page_init.PNG' width="90%">
+<img src='./image/apple_page_init.png' width="90%">
 </center>
 
 * 故技重施，在控制台直接搜索`page-init?locale=zh_CN`请求中的`x-apple-auth-token`的值，除了在`page-init?locale=zh_CN`出现过以外，在`?locale=zh_CN`也出现
