@@ -47,7 +47,7 @@
 * 页面加载关键的请求：`?locale=zh_CN`，`page-init?locale=zh_CN`，`captcha?type=image`
 
 <center>
-<img src='./image/apple_page_show.png' width="90%">
+<img src='./image/apple_page_ui.png' width="90%">
 </center>
 
 * 提交的请求：`coverage`
