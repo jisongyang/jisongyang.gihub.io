@@ -30,6 +30,8 @@
             df.loc[df['ord_id']==2506345]
             # 取满足多个条件的行
             df_feature.loc[(df_feature['comb_same']>50) & (df_feature['cnt_uni']>3)]
+            # 按下标取行
+            df1=df.iloc[0:index]
     ```
 * dataframe应用函数
     ```python
