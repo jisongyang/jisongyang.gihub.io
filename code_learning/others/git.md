@@ -47,6 +47,10 @@
     ```git
     git ls-files
     ```
+* 删除文件
+    ```git
+        git rm --cached file 从缓冲区删除文件，不再跟踪
+    ```
 
 
 * git reset
